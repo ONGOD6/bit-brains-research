@@ -1,13 +1,13 @@
----
-EIP: 0006
-Title: Proof of Care Continuity and Staking Enforcement
-Author: Alex Diaz
-Developer: OnGod
-Status: Draft
-Type: Standards Track
-Category: Core
-Created: 2025-12-26
-Requires: EIP-0001, EIP-0002, EIP-0003, EIP-0004
+EIP: 0006  
+Title: Proof of Care Continuity and Staking Enforcement  
+Author: Alex Diaz  
+Developer: OnGod  
+Status: Draft  
+Type: Standards Track  
+Category: Core  
+Created: 2025-12-26  
+Requires: EIP-0001, EIP-0002, EIP-0003, EIP-0004  
+
 ---
 
 ## Abstract
@@ -59,7 +59,7 @@ Continuity is mandatory for:
 - Reward eligibility
 - Advancement between phases
 - Cerebral mint eligibility
-- Autonomous Intelligent Token (AIT) eligibility
+- Autonomous Intelligent Technology (AIT) eligibility
 - RWA attribution eligibility
 
 Failure to maintain continuity during a required window results in delayed or reduced eligibility.
