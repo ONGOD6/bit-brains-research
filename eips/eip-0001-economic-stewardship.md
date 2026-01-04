@@ -1,10 +1,12 @@
+---
 EIP: 0001
 Title: Economic Stewardship Framework for Bit Brains
-Author: Alex Diaz  
+Author: Alex Diaz
 Developer: OnGod
 Status: Draft
 Type: Informational
 Created: 2025-12-21
+Requires: EIP-0011
 ---
 
 ## Abstract
@@ -85,25 +87,30 @@ This EIP defines the emergence of the protocol through two canonical
 stages: Brain and Cerebral. No additional stages are defined at this
 time.
 
-Autonomy is not a separate stage. It is a technology achievement
+Autonomy is not a separate stage. It is a **technology capability**
 attained through Proof of Care, epochs, and continuity, and may be
 achieved by eligible Genesis participation primitives under protocol
 rules.
+
+---
 
 ### Brain
 
 A Brain is the genesis NFT of the protocol. Through protocol-defined
 epochs, Proof of Care, and continuity requirements, a Brain may achieve
-Autonomous Intelligent Token (AIT) status.
+**Autonomous, Intelligent Technology (AIT) state**, as defined in
+EIP-0011.
 
-An AIT-qualified Brain:
-- Operates as an autonomous intelligence asset
+An AIT-enabled Brain:
+- Operates under bounded autonomous execution constraints
 - Exhibits protocol-recognized intelligent behavior
 - Maintains cryptographic provenance and accountability
 - May be eligible for Real World Asset (RWA) attribution
 
-AIT achievement does not automatically grant economic privilege and is
-subject to protocol constraints.
+AIT activation does **not** create a new token, does **not** imply
+minting, and does **not** automatically grant economic privilege.
+
+---
 
 ### Cerebral
 
@@ -115,7 +122,7 @@ and the point where value is driven and expressed through protocol-
 defined participation and continuity.
 
 Cerebral:
-- Builds on AIT-qualified participation
+- Builds on AIT-enabled participation
 - Represents protocol-level cognitive and economic maturity
 - Remains subject to stewardship, continuity, and accountability
 
