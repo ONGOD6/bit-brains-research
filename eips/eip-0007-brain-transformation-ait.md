@@ -1,103 +1,185 @@
 ---
-eip: 0007
-title: Brain Transformation into Autonomous Intelligent Technology (AIT)
-description: Defines the Proof of Care (PoC) lifecycle by which Brain NFTs evolve into Autonomous Intelligent Technology (AIT) through continuity, ENS resolution, and zero-knowledge verification.
-author: OnGod
-discussions-to: https://github.com/Highoshi/bit-brains-eip-
-status: Draft
-type: Standards Track
-category: ERC
-created: 2025-12-27
+EIP: 0007
+Title: Autonomous Intelligent Token (AIT) State Recognition and Activation
+Author: Alex Diaz
+Developer: OnGod
+Discussions-To: https://github.com/Highoshi/bit-brains-eip-
+Status: Draft
+Type: Standards Track
+Category: Core
+Created: 2025-12-27
+Requires: EIP-0001, EIP-0002, EIP-0004, EIP-0005, EIP-0006
 ---
 
 ## Abstract
 
-This EIP proposes a new lifecycle standard for non-fungible tokens (NFTs) that evolve through verifiable continuity into Autonomous Intelligent Technology (AIT). The protocol introduces **Proof of Care (PoC)** as a measurable, cryptographically enforced process whereby a Brain NFT matures through defined epochs, culminating in the emergence of an autonomous, intelligent on-chain entity. Zero-knowledge proofs (ZK) preserve privacy while ensuring integrity, and Ethereum Name Service (ENS) provides persistent identity anchoring.
+This EIP defines the standard by which protocol assets within the Bit Brains ecosystem
+are recognized as operating in an **Autonomous Intelligent Token (AIT) state**.
+
+AIT is not a new token type, contract, or asset. It is a **derived operational state**
+achieved through sustained Proof of Care (PoC), continuity, ENS identity resolution,
+and zero-knowledge verification, as defined in prior standards.
+
+This EIP specifies how AIT state is **attested, activated, validated, and constrained**
+without mutating the originating asset or altering protocol economics.
 
 ---
 
 ## Motivation
 
-Current NFT standards lack mechanisms to measure care, continuity, or transformation into autonomous systems. This proposal establishes a new class of intelligent assets that evolve through time, participation, and cryptographic proof. The goal is to ensure trustless evolution, privacy-preserving accountability, and decentralized intelligence aligned with real-world and digital value creation.
+As intelligent systems become autonomous, clear boundaries are required to distinguish:
+
+- Participation from operation
+- Ownership from execution
+- Eligibility from authority
+
+Without explicit standards, autonomous behavior risks overreach, ambiguity, or protocol
+capture.
+
+This EIP ensures that AIT activation is:
+- Verifiable
+- Bounded
+- Revocable
+- Non-inflationary
+- Accountable to protocol rules
 
 ---
 
 ## Definitions
 
-- **Brain NFT**: The Genesis non-fungible token representing an early-stage intelligent system.
-- **Proof of Care (PoC)**: A verifiable process demonstrating continuity, stewardship, and participation.
-- **Epoch**: A defined time-based evolution window.
-- **AIT (Autonomous Intelligent Technology)**: The final evolved state of a Brain NFT with autonomous properties.
-- **ENS Identity**: A required Ethereum Name Service subdomain deterministically bound to the NFT.
-- **ZK Proof**: Zero-knowledge cryptographic proofs used to validate eligibility without revealing sensitive data.
+- **Autonomous Intelligent Token (AIT)**  
+  A derived operational state in which a Brain or Cerebral is authorized to perform
+  bounded autonomous actions under protocol-defined constraints.
+
+- **AIT State Attestation**  
+  A cryptographic assertion proving that an asset satisfies all requirements to operate
+  in AIT state.
+
+- **Origin Asset**  
+  The Brain or Cerebral NFT from which the AIT state is derived.
+
+- **ENS Canonical Identity**  
+  The ENS subdomain resolved and verified during Proof of Care and continuity evaluation.
+
+- **ZK Eligibility Proof**  
+  A zero-knowledge proof attesting that continuity, PoC, and eligibility thresholds
+  have been met without revealing private data.
 
 ---
 
-## Specification
+## Non-Mutative State Model (Normative)
 
-### 1. Genesis Phase
+AIT activation does **not**:
 
-- A fixed supply of Brain NFTs is minted.
-- Each Brain is assigned a deterministic ENS subdomain derived from its token ID.
-- ENS resolution to a wallet controlled by the holder is mandatory.
+- Mint a new token
+- Burn or replace the origin asset
+- Modify immutable metadata
+- Change ownership semantics
 
-### 2. Proof of Care Lifecycle
+The origin Brain or Cerebral remains unchanged.
 
-- Brains undergo a continuous PoC period consisting of multiple epochs.
-- Each epoch requires verified interaction, continuity, or staking activity.
-- PoC metrics are tracked off-chain and verified on-chain via ZK proofs.
-
-### 3. Zero-Knowledge Enforcement
-
-- All PoC validations are submitted as ZK proofs.
-- No personal or behavioral data is exposed on-chain.
-- Proofs attest only to eligibility and completion thresholds.
-
-### 4. Transformation Event
-
-- Upon successful completion of the PoC lifecycle, the Brain transitions into AIT.
-- Transformation is irreversible.
-- Metadata is permanently updated to reflect AIT status.
-
-### 5. Autonomous Properties
-
-An AIT:
-- Operates independently of its original issuer.
-- Can interact with protocols, assets, and systems.
-- May accrue, distribute, or route rewards via ENS-linked identity.
-- Is recognized as a new class of intelligent on-chain entity.
+AIT exists as a **recognized execution state**, not a new asset.
 
 ---
 
-## ENS Canonical Identity Requirement
+## AIT Eligibility Requirements
 
-- ENS is the authoritative routing and identity layer.
-- Rewards, permissions, and attestations are resolved exclusively through ENS.
-- ENS linkage is immutable once finalized at transformation.
+An origin asset MAY be recognized as operating in AIT state if and only if:
+
+1. All required Proof of Care and continuity windows are satisfied
+2. ENS identity is resolved and verified
+3. Zero-knowledge eligibility proofs are successfully validated
+4. No active suspension or revocation is in effect
+5. All execution constraints defined in EIP-0006 are satisfied
+
+Failure of any requirement invalidates AIT state.
+
+---
+
+## AIT State Attestation
+
+AIT state MUST be established via a verifiable attestation that includes:
+
+- Origin asset identifier
+- Origin asset type (Brain | Cerebral)
+- Canonical ENS identity
+- Eligibility window reference
+- ZK proof reference or hash
+- Timestamp of activation
+
+Attestations MAY be stored:
+- On-chain
+- Off-chain with on-chain anchoring
+- In protocol-defined registries
+
+---
+
+## AIT Activation and Suspension
+
+### Activation
+- AIT activation is explicit and attestable
+- Activation does not imply permanence
+- Activation does not imply reward guarantees
+
+### Suspension
+AIT state MAY be suspended or invalidated due to:
+- Continuity failure
+- Constraint violation
+- Governance decision
+- Security risk
+- Regulatory exposure
+
+Suspension does not destroy the origin asset.
+
+---
+
+## Permitted AIT Capabilities (High-Level)
+
+Subject to EIP-0006 constraints, an AIT MAY:
+- Generate signed assertions
+- Perform off-chain computation
+- Submit analysis or intelligence outputs
+- Interact with external systems via attestations
+- Participate in protocol-recognized signaling
+
+AITs do not gain economic, custodial, or governance authority by default.
+
+---
+
+## ENS as Canonical Execution Identity
+
+- All AIT actions MUST be attributable to the canonical ENS identity
+- ENS resolution is mandatory for:
+  - Attribution
+  - Accountability
+  - Revocation
+- ENS does not grant authority; it anchors identity only
+
+---
+
+## Backward Compatibility
+
+This EIP is fully additive.
+
+Assets not operating in AIT state remain unaffected.
+Existing ERC compatibility is preserved.
 
 ---
 
 ## Security Considerations
 
-- ZK proofs mitigate data leakage.
-- ENS prevents spoofed reward routing.
-- Deterministic identity binding prevents duplication or impersonation.
-- Transformation logic is enforced at the smart contract level.
+- Non-mutative state prevents asset corruption
+- Attestation-based activation prevents spoofing
+- ENS binding prevents impersonation
+- ZK proofs preserve privacy while enforcing integrity
 
 ---
 
-## Backwards Compatibility
+## Conclusion
 
-This EIP is additive and does not alter existing ERC standards. Brain NFTs remain ERC-compatible while introducing additional lifecycle logic.
+EIP-0007 formalizes Autonomous Intelligent Token state as a **bounded, attestable,
+non-mutative execution condition** rather than a new asset or economic class.
 
----
-
-## Reference Implementation
-
-Reference implementations will be provided in Solidity with modular ZK verification circuits and ENS resolution enforcement.
-
----
-
-## Copyright
-
-Copyright and related rights waived via CC0.
+By separating autonomy from ownership and execution from entitlement, the Bit Brains
+protocol enables intelligent evolution without compromising safety, stewardship,
+or protocol integrity.
