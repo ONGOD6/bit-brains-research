@@ -1,12 +1,12 @@
----
-EIP: 0004
-Title: Cerebral NFTs and Reward Pathways
-Author: Alex Diaz
-Developer: OnGod
-Status: Draft
-Type: Standards Track
-Category: Core
-Created: 2025-12-22
+EIP: 0004  
+Title: Cerebral NFTs and Reward Pathways  
+Author: Alex Diaz  
+Developer: OnGod  
+Status: Draft  
+Type: Standards Track  
+Category: Core  
+Created: 2025-12-22  
+
 ---
 
 ## Abstract
@@ -78,8 +78,8 @@ Cerebrals may be:
 
 At Genesis, the protocol introduces two additive asset rails into the ecosystem:
 
-- **Genesis Brains (ERC-721)** — stake-bearing Genesis assets
-- **Genesis Pickle Punks (Ethscriptions)** — immutable calldata inscriptions eligible for Proof of Care participation
+- **Genesis Brains (ERC-721)** — stake-bearing Genesis assets  
+- **Genesis Pickle Punks (Ethscriptions)** — immutable calldata inscriptions eligible for Proof of Care participation  
 
 The protocol’s phases, epoch structure, continuity evaluation, and reward settlement rules do not change. Both rails progress through the same Proof of Care and continuity evaluation framework.
 
@@ -140,7 +140,6 @@ ENS requirements and derivation formats are specified elsewhere and are normativ
 ## Provenance Binding Requirement (Ethscriptions → Cerebral)
 
 When a Cerebral is minted from a Pickle Punk (Ethscription), the Cerebral mint MUST permanently bind provenance to:
-
 - The originating Pickle Punk inscription reference (identifier / provenance hash), and
 - The canonical ENS identity used for eligibility
 
@@ -178,11 +177,9 @@ Treasury-allocated Cerebrals are reserved exclusively for protocol-defined purpo
 
 All Expansion Epoch I Cerebrals are subject to a **3% secondary market royalty**, enforced at the contract level and distributed as follows:
 
-- **1% → Reward Treasury**
-- **1% → Artist**
-- **1% → Founder**
-
-These royalties reinforce long-term rewards funding, support creative contributors, and sustain protocol stewardship.
+- **1% → Reward Treasury**  
+- **1% → Artist**  
+- **1% → Founder**  
 
 ---
 
@@ -274,13 +271,11 @@ At completion of Phase 2:
 - **Two (2) Brainiacs** may be spawned if continuity requirements were fully maintained
 - **One (1) Brainiac** may be spawned if partial continuity requirements were maintained
 
-This structure rewards maximum continuity while allowing partial participation paths.
-
 ---
 
 ## Supply and Emissions Context
 
-The Bit token has a maximum supply of **200,000,000 BIT**.
+The **Brain Intelligence Token (BIT)** has a maximum supply of **200,000,000 BIT**.
 
 Cerebral rewards are not guaranteed, fixed, or unconditional.
 
