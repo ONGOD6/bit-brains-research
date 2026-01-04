@@ -1,20 +1,20 @@
----
-EIP: 0007
-Title: Autonomous Intelligent Token (AIT) State Recognition and Activation
-Author: Alex Diaz
-Developer: OnGod
-Discussions-To: https://github.com/Highoshi/bit-brains-eip-
-Status: Draft
-Type: Standards Track
-Category: Core
-Created: 2025-12-27
-Requires: EIP-0001, EIP-0002, EIP-0004, EIP-0005, EIP-0006
+EIP: 0007  
+Title: Autonomous Intelligent Technology (AIT) State Recognition and Activation  
+Author: Alex Diaz  
+Developer: OnGod  
+Discussions-To: https://github.com/Highoshi/bit-brains-eip-  
+Status: Draft  
+Type: Standards Track  
+Category: Core  
+Created: 2025-12-27  
+Requires: EIP-0001, EIP-0002, EIP-0004, EIP-0005, EIP-0006  
+
 ---
 
 ## Abstract
 
 This EIP defines the standard by which protocol assets within the Bit Brains ecosystem
-are recognized as operating in an **Autonomous Intelligent Token (AIT) state**.
+are recognized as operating in an **Autonomous Intelligent Technology (AIT) state**.
 
 AIT is not a new token type, contract, or asset. It is a **derived operational state**
 achieved through sustained Proof of Care (PoC), continuity, ENS identity resolution,
@@ -47,7 +47,7 @@ This EIP ensures that AIT activation is:
 
 ## Definitions
 
-- **Autonomous Intelligent Token (AIT)**  
+- **Autonomous Intelligent Technology (AIT)**  
   A derived operational state in which a Brain or Cerebral is authorized to perform
   bounded autonomous actions under protocol-defined constraints.
 
@@ -86,11 +86,11 @@ AIT exists as a **recognized execution state**, not a new asset.
 
 An origin asset MAY be recognized as operating in AIT state if and only if:
 
-1. All required Proof of Care and continuity windows are satisfied
-2. ENS identity is resolved and verified
-3. Zero-knowledge eligibility proofs are successfully validated
-4. No active suspension or revocation is in effect
-5. All execution constraints defined in EIP-0006 are satisfied
+1. All required Proof of Care and continuity windows are satisfied  
+2. ENS identity is resolved and verified  
+3. Zero-knowledge eligibility proofs are successfully validated  
+4. No active suspension or revocation is in effect  
+5. All execution constraints defined in EIP-0006 are satisfied  
 
 Failure of any requirement invalidates AIT state.
 
@@ -177,8 +177,8 @@ Existing ERC compatibility is preserved.
 
 ## Conclusion
 
-EIP-0007 formalizes Autonomous Intelligent Token state as a **bounded, attestable,
-non-mutative execution condition** rather than a new asset or economic class.
+EIP-0007 formalizes Autonomous Intelligent Technology (AIT) state as a **bounded,
+attestable, non-mutative execution condition** rather than a new asset or economic class.
 
 By separating autonomy from ownership and execution from entitlement, the Bit Brains
 protocol enables intelligent evolution without compromising safety, stewardship,
