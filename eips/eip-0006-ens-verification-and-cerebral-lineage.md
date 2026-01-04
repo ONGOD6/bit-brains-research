@@ -1,107 +1,179 @@
-# EIP-0006: ENS Verification, Reward Routing, and Cerebral Lineage
-
-## Status
-Draft
-
-## Author
-Bit Brains Protocol
-
-## Created
-2025-12-26
+---
+EIP: 0006
+Title: Proof of Care Continuity and Staking Enforcement
+Author: Alex Diaz
+Developer: OnGod
+Status: Draft
+Type: Standards Track
+Category: Core
+Created: 2025-12-26
+Requires: EIP-0001, EIP-0002, EIP-0003, EIP-0004
+---
 
 ## Abstract
-This proposal defines a mandatory Ethereum Name Service (ENS)–based verification and reward routing mechanism for the Bit Brains Protocol. It establishes ENS resolution as the canonical payout destination for all rewards, introduces ENS-linked security guarantees, and specifies mint-time lineage metadata for Phase 2 Cerebrals.
+
+This EIP defines the continuity enforcement rules for Proof of Care (PoC) and staking within the Bit Brains Protocol.
+
+It establishes mandatory continuity requirements across epochs and phases, specifies disqualification and eligibility rules, and defines how interruptions in participation affect rewards, progression, and advancement into higher protocol states.
+
+This EIP applies uniformly across all Genesis participation primitives, including Brains, Pickle Punks (Ethscriptions), and derived Cerebrals, without altering the underlying epoch or reward mechanics defined in earlier standards.
+
+---
 
 ## Motivation
-To ensure transparent, non-custodial, and verifiable reward distribution, the protocol must bind rewards to identities that are:
-- Human-readable
-- On-chain verifiable
-- User-controlled
 
-ENS provides a canonical identity layer that satisfies these requirements while enabling composability with zero-knowledge (ZK) accounting systems.
+The Bit Brains protocol prioritizes long-term alignment over short-term participation.
 
-## Specification
+Without explicit continuity enforcement, participants could extract rewards by temporarily participating at critical moments without maintaining sustained care. This EIP ensures that Proof of Care is not symbolic but continuous, measurable, and enforceable.
 
-### 1. ENS Wallet Resolution (Phase 1: Brains)
+Continuity is treated as a protocol invariant rather than an optional behavior.
 
-#### Requirement
-Each Genesis Brain MUST be associated with a deterministic ENS subdomain under `bitbrains.eth`.
+---
 
-Example format:
-- `brain-####.bitbrains.eth`
+## Definitions
 
-#### Rules
-- The Brain holder MUST resolve their ENS subdomain to a wallet they control.
-- Rewards are routed exclusively to the resolved address of the ENS name.
-- Arbitrary payout addresses MUST NOT be accepted.
-- ENS resolution is the first required verification step for rewards eligibility.
+- **Continuity**  
+  Uninterrupted satisfaction of Proof of Care requirements across a defined sequence of epochs.
 
-#### Gas Responsibility
-- ENS record updates and resolution gas costs are paid by the Brain holder.
-- The protocol does NOT subsidize ENS gas fees.
+- **Proof of Care (PoC)**  
+  Verifiable behaviors demonstrating sustained, constructive participation as defined in EIP-0002.
 
-### 2. Reward Accrual and Redemption
+- **Epoch**  
+  A fixed-duration accountability window during which PoC is evaluated.
 
-- Rewards accrue internally while a Brain remains staked.
-- No on-chain transactions are required during accrual.
-- When a holder chooses to claim rewards:
-  - The holder initiates the transaction.
-  - The holder pays the gas fee.
-  - Rewards are released to the resolved ENS address.
+- **Phase**  
+  A group of five (5) consecutive epochs forming a reward settlement boundary.
 
-### 3. Zero-Knowledge Accounting (ZK)
+- **Genesis Participant**  
+  A protocol-recognized participation primitive introduced at Genesis, including Brains and Pickle Punks.
 
-- ZK proofs MAY be used for eligibility, accounting, and compliance checks.
-- ENS resolution remains the canonical payout destination regardless of ZK implementation.
-- ZK systems MUST NOT override ENS-based routing.
+- **Staking Asset**  
+  An asset that is required to remain staked to maintain continuity, as defined by protocol rules.
 
-## Phase 2: Cerebrals — ENS + Lineage
+---
 
-### ENS Naming (Cerebrals)
-Each Cerebral MUST have a deterministic ENS subdomain under `bitbrains.eth`:
+## Continuity Requirement (Global)
 
-- `cerebral.<NN>.bitbrains.eth`
+Continuity is mandatory for:
 
-Where `<NN>` is a zero-padded Cerebral index (e.g., `01`, `02`, …).
+- Reward eligibility
+- Advancement between phases
+- Cerebral mint eligibility
+- Autonomous Intelligent Token (AIT) eligibility
+- RWA attribution eligibility
 
-### Artwork
-- Cerebral NFTs SHOULD display only the Cerebral number (e.g., `01`) on the artwork.
-- ENS names are NOT required to be displayed visually on the card.
+Failure to maintain continuity during a required window results in delayed or reduced eligibility.
 
-### Mint-Time Lineage Metadata (Immutable)
-At mint, each Cerebral MUST include immutable metadata linking it to its origin Brain.
+---
 
-Required metadata fields:
-- `originBrainId`
-- `cerebralIndex`
-- `cerebralEnsName`
-- `lineageNumber` (format: `<originBrainId>-<cerebralIndex>`)
+## Continuity Windows
 
-This metadata MUST be set at mint and MUST NOT be modifiable.
+Continuity is evaluated over explicit windows defined by protocol phase rules.
 
-### Provenance Guarantees
-- Lineage establishes provable origin of each Cerebral.
-- ENS + lineage binds rewards, ownership, and provenance to a single verifiable identity.
+### Phase-Level Continuity
+
+- Each Phase consists of five (5) epochs
+- Full continuity requires uninterrupted PoC across all five epochs
+- Partial continuity MAY be recognized for reduced outcomes as defined in later EIPs
+
+---
+
+## Staking and Continuity Enforcement
+
+### Brains
+
+- Brains MUST remain staked continuously during required continuity windows
+- Unstaking during a required window breaks continuity
+- Breaking continuity disqualifies the Brain from full eligibility for that Phase
+
+### Pickle Punks (Ethscriptions)
+
+- Pickle Punks do not stake
+- Continuity is enforced through:
+  - Proof of Care signals
+  - Identity persistence (ENS)
+  - Epoch participation validation
+
+Failure to satisfy continuity requirements disqualifies the Pickle Punk from progression outcomes for that window.
+
+---
+
+## Continuity Failure and Recovery
+
+- Continuity failure does NOT permanently disqualify a participant
+- Failed windows MUST be reattempted in full
+- Progression resumes only after continuity is re-established across a complete window
+
+Continuity failures do not slash rewards and do not redistribute locked rewards.
+
+---
+
+## Impact on Rewards
+
+- Rewards accrue only during epochs where continuity is maintained
+- Rewards associated with incomplete continuity windows remain locked
+- Locked rewards MAY become claimable once continuity is successfully re-established
+
+Rewards are never redistributed to other participants.
+
+---
+
+## Interaction with Cerebral Minting
+
+- Genesis Cerebral mint eligibility requires full continuity across the defined eligibility window
+- Partial continuity MAY reduce mint quantity or delay mint eligibility
+- Continuity enforcement applies equally to:
+  - Brain-derived Cerebrals
+  - Pickle Punk–derived Cerebrals
+
+---
+
+## Interaction with AIT Eligibility
+
+- AIT eligibility requires uninterrupted continuity across protocol-defined windows
+- Continuity failure delays, but does not eliminate, AIT eligibility
+- All AIT lineage remains bound to the originating asset via ENS and immutable metadata
+
+---
+
+## Non-Custodial Enforcement
+
+Continuity enforcement does not require:
+
+- Custody of participant funds
+- Forced transactions
+- Automatic slashing
+
+All enforcement occurs through eligibility gating and reward locking.
+
+---
 
 ## Security Considerations
-- ENS resolution prevents reward redirection attacks.
-- User-controlled ENS ensures non-custodial payouts.
-- Lineage metadata prevents counterfeit or orphaned Cerebrals.
-- ZK accounting can enforce eligibility without revealing private data.
 
-## Rationale
-ENS provides a stable identity layer that:
-- Is composable across Ethereum tooling
-- Supports human-readable verification
-- Enables deterministic reward routing
-- Integrates cleanly with ZK systems
+Continuity enforcement mitigates:
 
-## Backward Compatibility
-This proposal introduces no breaking changes for unstaked or inactive assets. Rewards eligibility begins once ENS resolution is completed.
+- Opportunistic participation
+- Epoch boundary exploitation
+- Reward extraction without sustained care
 
-## Reference Implementation
-- ENS Manager (external): https://app.ens.domains
-- Bit Brains ENS Verification Page: `/ens`
+No enforcement mechanism may introduce discretionary or subjective judgment.
+
+---
+
+## Governance Considerations
+
+Changes to continuity windows, enforcement severity, or recovery rules require governance approval and MUST be defined in subsequent EIPs.
+
+---
 
 ## Conclusion
-ENS resolution is the canonical identity and reward routing mechanism of the Bit Brains Protocol. Combined with mint-time lineage and optional ZK accounting, this establishes a secure, scalable, and verifiable foundation for Phase 1 Brains and Phase 2 Cerebrals.
+
+This EIP establishes continuity as a core invariant of the Bit Brains Protocol.
+
+By enforcing uninterrupted Proof of Care across defined windows, the protocol ensures that rewards, progression, and autonomous evolution remain aligned with long-term stewardship rather than short-term participation.
+
+---
+
+## Copyright
+
+Copyright and related rights waived via CC0.
