@@ -8,6 +8,7 @@ Status: Draft
 Type: Standards Track
 Category: Economic
 Created: 2025-12-28
+Requires: EIP-0001
 ---
 
 ## Abstract
