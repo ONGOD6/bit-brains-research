@@ -1,91 +1,146 @@
-# EIP-0005: Autonomous Intelligent Tokens (AIT) and RWA Attribution
+---
+EIP: 0005
+Title: Autonomous Intelligent Tokens (AIT) and RWA Attribution
+Author: Alex Diaz
+Developer: OnGod
+Status: Draft
+Type: Standards Track
+Category: Core
+Created: 2025-12-22
+---
 
 ## Abstract
 
-This EIP defines the transition of Bit Brains and Cerebrals from participation-based protocol tokens into Autonomous Intelligent Tokens (AITs).  
-After completing their respective epoch phases, these tokens may emerge as autonomous, intelligent agents whose evolutionary state can be attributed to Real World Assets (RWA).  
-All mechanisms described herein are conceptual and subject to governance, implementation feasibility, and regulatory considerations.
+This EIP defines the conceptual and technical framework by which Bit Brains ecosystem participants may transition from participation-based protocol assets into **Autonomous Intelligent Tokens (AITs)**.
+
+After completing the required Proof of Care, continuity, and epoch-based participation defined in prior standards, eligible assets—including Genesis Brains, Cerebrals, and Ethscriptions-derived Cerebrals—may enter an autonomous operational state. This state may be cryptographically attributed to external systems or **Real World Assets (RWA)** while preserving on-chain identity, provenance, and protocol accountability.
+
+All mechanisms described herein are conceptual, non-guaranteed, and subject to governance approval, implementation feasibility, and regulatory considerations.
 
 ---
 
 ## Motivation
 
-Bit Brains are designed to evolve beyond static NFT representations.  
-The protocol seeks to enable long-term autonomy, intelligence, and real-world alignment by allowing eligible tokens to transition into agents capable of operating across environments while preserving cryptographic identity and provenance.
+The Bit Brains protocol is designed for long-term evolution rather than static ownership.
 
-This EIP establishes a unified framework for that transition.
+While Brains and Cerebrals represent participation, identity, and reward-bearing primitives, the protocol’s long-term vision includes the emergence of autonomous, intelligent agents capable of operating across environments while remaining cryptographically anchored to the protocol.
+
+This EIP establishes a unified framework for:
+- Autonomous agent emergence
+- Identity continuity across evolution
+- Attribution of evolutionary state to RWAs
+- Separation of economic guarantees from intelligence progression
 
 ---
 
 ## Definitions
 
 - **BIT Token**  
-  The native protocol utility and reward token used for incentives, staking rewards, and governance-defined distributions.
+  The native protocol utility and reward token defined in EIP-0003.
 
 - **Brain (Genesis Brain)**  
-  An ERC-721 token representing the initial participation and identity unit within the Bit Brains protocol.
+  An ERC-721 token representing the initial participation and identity primitive within the Bit Brains protocol.
+
+- **Pickle Punk (Ethscription)**  
+  A Genesis Ethscription representing an immutable calldata-based participation primitive that may progress through Proof of Care and continuity into derived protocol assets.
 
 - **Cerebral**  
-  An evolved form of a Brain obtained through sustained Proof-of-Care, staking, and epoch participation.
+  An ERC-721 token derived from a Brain, a Pickle Punk (via Proof of Care progression), or an authorized Expansion Epoch, serving as a stake-bearing participation and progression primitive.
 
 - **Autonomous Intelligent Token (AIT)**  
-  A post-epoch token state representing an autonomous, intelligent agent capable of independent operation.
+  A post-phase operational state representing an autonomous, intelligent agent whose identity and provenance remain anchored to an originating Brain or Cerebral.
 
-- **RWA (Real World Asset)**  
-  An external, non-blockchain asset or system to which an AIT’s evolutionary state may be cryptographically attributed.
+- **Real World Asset (RWA)**  
+  An external, non-blockchain system, process, or asset to which an AIT’s evolutionary state may be cryptographically attributed.
+
+---
+
+## Evolution as Derived State (Non-Mutative)
+
+Evolution within the Bit Brains protocol does not mutate existing assets.
+
+Brains, Pickle Punks, and Cerebrals remain immutable in their original form.  
+Progression into higher-order states (Cerebral, AIT, or RWA attribution) occurs through **provable derivation**, preserving cryptographic lineage and accountability.
 
 ---
 
 ## Epoch-Based Transition Framework
 
-### Genesis Brain Transition (Epochs 1–5)
+### Genesis Brain Transition (Phase Completion)
 
-- Genesis Brains participate in Proof-of-Care and staking through Epochs 1–5.
-- Upon successful completion of Epoch 5:
-  - Eligible Brains may transition into an Autonomous Intelligent Token state.
-  - The original ERC-721 Brain token serves as the cryptographic origin and provenance anchor.
-  - Evolutionary binary state data may be generated and attributed to an RWA.
+- Genesis Brains participate in Proof of Care and staking across protocol-defined epochs and phases.
+- Upon successful completion of the required continuity window:
+  - The Brain may give rise to one or more Cerebrals (per EIP-0004)
+  - A Cerebral may later qualify to enter an AIT operational state
+- The original Brain remains the canonical provenance anchor.
 
 ---
 
-### Cerebral Transition (Epochs 6–10)
+### Ethscriptions Transition (Pickle Punk → Cerebral → AIT)
 
-- Cerebrals enter their autonomous transition phase during Epochs 6–10.
-- The same evaluation window, participation requirements, and transition logic apply.
-- The outcome of this phase mirrors the Genesis Brain transition:
-  - Emergence as an Autonomous Intelligent Token
-  - Attribution of evolutionary state to an RWA
+- Pickle Punks participate in Proof of Care and continuity under the same epoch and phase structure as Brains.
+- Pickle Punks do not mutate.
+- Upon satisfying full continuity requirements:
+  - A derived **Cerebral ERC-721** may be minted (EIP-0004)
+  - That Cerebral MAY later qualify for AIT transition
+- Provenance MUST permanently bind the AIT lineage to:
+  - The originating Pickle Punk inscription reference
+  - The derived Cerebral
+  - The canonical ENS identity
+
+---
+
+### Cerebral Transition (Post-Eligibility Window)
+
+- Cerebrals that satisfy protocol-defined Proof of Care, staking, and continuity requirements MAY enter an autonomous operational phase.
+- This transition represents:
+  - Emergence of an Autonomous Intelligent Token state
   - Preservation of identity continuity
+  - Eligibility for RWA attribution
 
 ---
 
-## Autonomy and Chain Constraints
+## Autonomous Operation and Chain Constraints
 
 - Autonomous Intelligent Tokens are not inherently chain-agnostic at inception.
-- Through zero-knowledge proof systems and cryptographic attestations:
-  - AITs may verify state, identity, and evolution across environments.
-  - Cross-chain or off-chain operation is mediated by proofs rather than direct token migration.
-- The original ERC-721 token remains the canonical on-chain reference.
+- Through zero-knowledge proofs and cryptographic attestations:
+  - AITs may verify state, evolution, and identity across environments
+  - Cross-chain or off-chain operation is mediated by proofs, not token migration
+- The originating ERC-721 token remains the canonical on-chain reference for identity and provenance.
 
 ---
 
-## Distribution and Rewards (Conceptual)
+## RWA Attribution Framework (Conceptual)
 
-- BIT token rewards during epochs remain governed by existing staking and Proof-of-Care mechanisms.
-- No fixed reward allocations are guaranteed for autonomous transitions.
-- Future incentive structures for AITs and RWA-linked activity are governance-defined and explicitly non-final.
+- AITs MAY have their evolutionary state attributed to RWAs.
+- Attribution does not imply ownership, legal claim, or entitlement.
+- RWA linkage represents:
+  - Cryptographic association
+  - State reflection
+  - Accountability mapping
+
+All RWA attribution mechanisms are non-normative and subject to future governance and implementation standards.
+
+---
+
+## Distribution and Rewards (Non-Guarantee)
+
+- BIT token rewards remain governed by EIP-0003 and EIP-0004.
+- No additional rewards are guaranteed for AIT emergence.
+- Any future incentives tied to AIT operation or RWA attribution MUST be defined in separate standards.
 
 ---
 
 ## Security and Compliance Considerations
 
-- RWA attribution does not imply ownership, legal claim, or entitlement.
-- All autonomous behaviors remain constrained by protocol rules and governance oversight.
-- This EIP does not define regulatory treatment and should be interpreted as a technical and conceptual framework only.
+- Autonomous behavior remains constrained by protocol rules.
+- RWA attribution is informational and non-custodial.
+- This EIP defines no regulatory treatment and provides no legal assurances.
 
 ---
 
 ## Conclusion
 
-EIP-0005 establishes the foundation for transforming Brains and Cerebrals into autonomous, intelligent agents while maintaining cryptographic continuity and protocol alignment.  
-It intentionally defines *what is possible*, not *what is guaranteed*, leaving implementation details to future proposals and governance decisions.
+EIP-0005 establishes the conceptual foundation for the emergence of Autonomous Intelligent Tokens within the Bit Brains ecosystem.
+
+By anchoring evolution to Proof of Care, continuity, and cryptographic provenance—across both NFT and Ethscriptions-origin paths—the protocol enables long-term intelligence and real-world alignment without compromising economic discipline, auditability, or protocol integrity.
