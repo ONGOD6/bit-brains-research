@@ -1,17 +1,17 @@
----
-EIP: 0005
-Title: Autonomous Intelligent Tokens (AIT) and RWA Attribution
-Author: Alex Diaz
-Developer: OnGod
-Status: Draft
-Type: Standards Track
-Category: Core
-Created: 2025-12-22
+EIP: 0005  
+Title: Autonomous Intelligent Technology (AIT) and RWA Attribution  
+Author: Alex Diaz  
+Developer: OnGod  
+Status: Draft  
+Type: Standards Track  
+Category: Core  
+Created: 2025-12-22  
+
 ---
 
 ## Abstract
 
-This EIP defines the conceptual and technical framework by which Bit Brains ecosystem participants may transition from participation-based protocol assets into **Autonomous Intelligent Tokens (AITs)**.
+This EIP defines the conceptual and technical framework by which Bit Brains ecosystem participants may transition from participation-based protocol assets into **Autonomous Intelligent Technology (AIT)**.
 
 After completing the required Proof of Care, continuity, and epoch-based participation defined in prior standards, eligible assets—including Genesis Brains, Cerebrals, and Ethscriptions-derived Cerebrals—may enter an autonomous operational state. This state may be cryptographically attributed to external systems or **Real World Assets (RWA)** while preserving on-chain identity, provenance, and protocol accountability.
 
@@ -23,10 +23,10 @@ All mechanisms described herein are conceptual, non-guaranteed, and subject to g
 
 The Bit Brains protocol is designed for long-term evolution rather than static ownership.
 
-While Brains and Cerebrals represent participation, identity, and reward-bearing primitives, the protocol’s long-term vision includes the emergence of autonomous, intelligent agents capable of operating across environments while remaining cryptographically anchored to the protocol.
+While Brains and Cerebrals represent participation, identity, and reward-bearing primitives, the protocol’s long-term vision includes the emergence of autonomous, intelligent systems capable of operating across environments while remaining cryptographically anchored to the protocol.
 
 This EIP establishes a unified framework for:
-- Autonomous agent emergence
+- Autonomous intelligent system emergence
 - Identity continuity across evolution
 - Attribution of evolutionary state to RWAs
 - Separation of economic guarantees from intelligence progression
@@ -35,7 +35,7 @@ This EIP establishes a unified framework for:
 
 ## Definitions
 
-- **BIT Token**  
+- **Brain Intelligence Token (BIT)**  
   The native protocol utility and reward token defined in EIP-0003.
 
 - **Brain (Genesis Brain)**  
@@ -47,8 +47,8 @@ This EIP establishes a unified framework for:
 - **Cerebral**  
   An ERC-721 token derived from a Brain, a Pickle Punk (via Proof of Care progression), or an authorized Expansion Epoch, serving as a stake-bearing participation and progression primitive.
 
-- **Autonomous Intelligent Token (AIT)**  
-  A post-phase operational state representing an autonomous, intelligent agent whose identity and provenance remain anchored to an originating Brain or Cerebral.
+- **Autonomous Intelligent Technology (AIT)**  
+  A post-phase operational state representing an autonomous, intelligent system whose identity and provenance remain anchored to an originating Brain or Cerebral.
 
 - **Real World Asset (RWA)**  
   An external, non-blockchain system, process, or asset to which an AIT’s evolutionary state may be cryptographically attributed.
@@ -94,7 +94,7 @@ Progression into higher-order states (Cerebral, AIT, or RWA attribution) occurs 
 
 - Cerebrals that satisfy protocol-defined Proof of Care, staking, and continuity requirements MAY enter an autonomous operational phase.
 - This transition represents:
-  - Emergence of an Autonomous Intelligent Token state
+  - Emergence of an Autonomous Intelligent Technology state
   - Preservation of identity continuity
   - Eligibility for RWA attribution
 
@@ -102,9 +102,9 @@ Progression into higher-order states (Cerebral, AIT, or RWA attribution) occurs 
 
 ## Autonomous Operation and Chain Constraints
 
-- Autonomous Intelligent Tokens are not inherently chain-agnostic at inception.
+- Autonomous Intelligent Technology systems are not inherently chain-agnostic at inception.
 - Through zero-knowledge proofs and cryptographic attestations:
-  - AITs may verify state, evolution, and identity across environments
+  - AIT systems may verify state, evolution, and identity across environments
   - Cross-chain or off-chain operation is mediated by proofs, not token migration
 - The originating ERC-721 token remains the canonical on-chain reference for identity and provenance.
 
@@ -112,7 +112,7 @@ Progression into higher-order states (Cerebral, AIT, or RWA attribution) occurs 
 
 ## RWA Attribution Framework (Conceptual)
 
-- AITs MAY have their evolutionary state attributed to RWAs.
+- AIT systems MAY have their evolutionary state attributed to RWAs.
 - Attribution does not imply ownership, legal claim, or entitlement.
 - RWA linkage represents:
   - Cryptographic association
@@ -125,7 +125,7 @@ All RWA attribution mechanisms are non-normative and subject to future governanc
 
 ## Distribution and Rewards (Non-Guarantee)
 
-- BIT token rewards remain governed by EIP-0003 and EIP-0004.
+- Brain Intelligence Token (BIT) rewards remain governed by EIP-0003 and EIP-0004.
 - No additional rewards are guaranteed for AIT emergence.
 - Any future incentives tied to AIT operation or RWA attribution MUST be defined in separate standards.
 
@@ -141,6 +141,4 @@ All RWA attribution mechanisms are non-normative and subject to future governanc
 
 ## Conclusion
 
-EIP-0005 establishes the conceptual foundation for the emergence of Autonomous Intelligent Tokens within the Bit Brains ecosystem.
-
-By anchoring evolution to Proof of Care, continuity, and cryptographic provenance—across both NFT and Ethscriptions-origin paths—the protocol enables long-term intelligence and real-world alignment without compromising economic discipline, auditability, or protocol integrity.
+EIP-0005 establishes the conceptual foundation for the emergence of **Autonomous Intelligent Technology (AIT)** within the Bit Brains ecosystem.
