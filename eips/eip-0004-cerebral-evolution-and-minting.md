@@ -1,4 +1,4 @@
-EIP: 0004  
+# EIP-0004
 Title: Cerebral NFTs and Reward Pathways  
 Author: Alex Diaz  
 Developer: OnGod  
@@ -15,7 +15,7 @@ This EIP defines the Cerebral NFT layer within the Bit Brains ecosystem. Cerebra
 
 This proposal establishes the structure, purpose, reward pathways, phase progression, expansion mechanics, and royalty routing for the Cerebral layer.
 
-This EIP additionally recognizes a Genesis Ethscriptions participation rail (Pickle Punks) that may progress into Cerebrals by satisfying the same Proof of Care and continuity requirements as Genesis Brains. The protocol’s phases, continuity gates, and reward settlement rules do not change; the Pickle Punk rail is additive.
+This EIP additionally recognizes a Genesis Ethscriptions participation rail (Pickle Punks) that may become eligible to mint Cerebrals during Phase 2 by satisfying the same Proof of Care and continuity requirements as Genesis Brains. The protocol’s phases, continuity gates, and reward settlement rules do not change; the Pickle Punk rail is additive.
 
 ---
 
@@ -29,32 +29,32 @@ This EIP introduces Cerebrals to:
 - Support identity, ENS, and signaling primitives
 - Create a progression path toward economic and autonomous utility
 
-The protocol also introduces Ethscriptions as a Genesis asset rail. Ethscriptions are immutable inscriptions with provenance anchored to Ethereum calldata. This EIP provides an additive pathway for Ethscriptions (Pickle Punks) to evolve into the Cerebral layer through the same Proof of Care and continuity requirements as Brains, preserving protocol integrity while enabling Ethscriptions-based evolution.
+The protocol also introduces Ethscriptions as a Genesis asset rail. Ethscriptions are immutable inscriptions with provenance anchored to Ethereum calldata. This EIP provides an additive eligibility pathway for Ethscriptions (Pickle Punks) to mint Cerebrals during Phase 2 through the same Proof of Care and continuity requirements as Brains, preserving protocol integrity while enabling Ethscriptions-based participation.
 
 ---
 
 ## Definitions
 
 - **Brain**  
-  The genesis NFT representing the earliest and longest-lived commitment to the Bit Brains ecosystem.
+  The Genesis ERC-721 NFT representing the earliest and longest-lived commitment to the Bit Brains ecosystem.
 
 - **Pickle Punk (Ethscription)**  
-  A Genesis Headshot Ethscription recognized by the protocol as an eligible Proof of Care participant and progression primitive. Pickle Punks are immutable calldata inscriptions and do not mutate; progression occurs by minting protocol-defined derived assets.
+  A Genesis Headshot Ethscription recognized by the protocol as an eligible Proof of Care participant. Pickle Punks are immutable calldata inscriptions and do not mutate.
 
 - **Cerebral**  
-  An ERC-721 NFT derived from Genesis Brains, Genesis Ethscriptions (Pickle Punks), or authorized Expansion Epochs, serving as a staking, participation, and progression primitive.
+  An ERC-721 NFT minted during Phase 2 or authorized Expansion Epochs, serving as a staking, participation, and progression primitive. Eligibility to mint Cerebrals may be earned through Genesis Brains, Genesis Ethscriptions (Pickle Punks), or Expansion participation, subject to Proof of Care and continuity requirements.
 
 - **Proof of Care (PoC)**  
-  Sustained participation, staking continuity, and ecosystem-aligned behavior maintained across defined epochs within a phase, validated by ZK accountability.
+  Sustained participation, staking continuity, and ecosystem-aligned behavior maintained across defined epochs within a phase, validated by Zero-Knowledge accountability.
 
 - **Phase**  
-  A protocol lifecycle stage (e.g., Brain Phase, Cerebral Phase, Brainiac Phase) consisting of five (5) epochs.
+  A protocol lifecycle stage consisting of five (5) epochs.
 
 - **Epoch**  
-  A time-bounded accountability interval (approximately one month) within a phase, during which ZK proofs evaluate continuity, PoC signatures, and non-interference.
+  A time-bounded accountability interval (approximately one month) within a phase, during which ZK proofs evaluate continuity, Proof of Care signatures, and non-interference.
 
 - **Expansion Epoch**  
-  A governance-authorized event introducing additional Cerebrals to support ecosystem growth and broader participation.
+  A governance-authorized event introducing additional Cerebrals to support ecosystem growth.
 
 - **Real World Assets (RWA)**  
   Tokenized or represented economic activities, goods, or services that exist outside purely digital systems.
@@ -63,243 +63,94 @@ The protocol also introduces Ethscriptions as a Genesis asset rail. Ethscription
 
 ## Cerebral Overview
 
-Cerebrals are ERC-721 NFTs that represent active participation within the Bit Brains ecosystem. They serve as the primary interface for staking, reward distribution, identity signaling, and future autonomous intelligence development.
+Cerebrals are ERC-721 NFTs minted during Phase 2 or authorized Expansion Epochs. They serve as the primary interface for staking, reward distribution, identity signaling, and future autonomous intelligence development.
 
-Cerebrals may be:
-- Earned through Genesis Brain participation (Genesis entitlement path)
-- Earned through Genesis Pickle Punk participation (Ethscriptions progression path)
-- Minted during authorized Expansion Epochs (Public + Treasury allocations)
-- Utilized for staking and reward accrual
-- Evolved into higher-order components over time
+Genesis Brains and Genesis Pickle Punks do not spawn or sponsor Cerebrals. They confer eligibility only to mint Cerebrals during Phase 2, subject to Proof of Care and continuity requirements.
 
 ---
 
 ## Genesis Assets and Participation Rails (Additive)
 
-At Genesis, the protocol introduces two additive asset rails into the ecosystem:
+At Genesis, the protocol introduces two additive asset rails:
+- **Genesis Brains (ERC-721)**
+- **Genesis Pickle Punks (Ethscriptions)**
 
-- **Genesis Brains (ERC-721)** — stake-bearing Genesis assets  
-- **Genesis Pickle Punks (Ethscriptions)** — immutable calldata inscriptions eligible for Proof of Care participation  
-
-The protocol’s phases, epoch structure, continuity evaluation, and reward settlement rules do not change. Both rails progress through the same Proof of Care and continuity evaluation framework.
-
----
-
-## Genesis Cerebrals
-
-Each **Brain** is entitled to mint up to **two (2) Genesis Cerebrals** through defined staking and participation mechanics.
-
-Genesis Cerebrals represent early alignment and inherit preferential reward pathways relative to later Expansion participants, subject to Proof of Care requirements.
+Both rails are evaluated under the same Proof of Care, continuity, epoch, and phase framework.
 
 ---
 
-## Pickle Punk Cerebrals (Ethscriptions Evolution Path)
+## Genesis Cerebral Mint Eligibility (Phase 2)
 
-Each **Pickle Punk (Ethscription)** may become eligible to mint up to **two (2) Genesis Cerebrals** by completing the same Proof of Care and continuity requirements required for Genesis Brain progression.
+Eligible Genesis Brain holders may mint Genesis Cerebrals during Phase 2, provided all Proof of Care, continuity, staking (where applicable), and ENS requirements are satisfied.
 
-Ethscriptions do not mutate. “Evolution” is achieved by minting a derived ERC-721 Cerebral that permanently references the originating Pickle Punk inscription as provenance.
+The total number of Cerebrals that may be minted during Phase 2 is intentionally unspecified and will be determined by protocol rules or governance defined elsewhere.
+
+Genesis Brains do not automatically spawn Cerebrals. All Cerebrals are explicitly minted.
 
 ---
 
-## Progression and Minting Eligibility (Brains and Pickle Punks)
+## Pickle Punk Cerebral Mint Eligibility (Ethscriptions Path)
 
-Brains and Pickle Punks may progress into Cerebrals by satisfying protocol-defined Proof of Care and continuity requirements.
+Eligible Pickle Punk (Ethscription) holders may mint Genesis Cerebrals during Phase 2 by satisfying the same Proof of Care and continuity requirements required for Genesis Brain holders.
 
-### Eligibility requirements (global)
+Pickle Punks do not mutate and do not spawn Cerebrals. Eligibility permits Phase 2 minting only. All Cerebrals minted via this path must permanently reference the originating Pickle Punk inscription as provenance.
 
-A participant must:
-- Sign Proof of Care and continuity commitments as required by protocol
-- Maintain uninterrupted continuity across the defined eligibility window
-- Pass ZK accountability validation across epochs
-- Resolve the protocol-required ENS identity used for eligibility and reward routing
-
-### Continuity requirement for Genesis Cerebral eligibility
-
-Full continuity must be maintained continuously throughout **Phase 2 (Cerebral Phase), Epochs 1–5**.
-
-Partial participation or early withdrawal during **Phase 2 Epochs 1–5** disqualifies the participant from full (two) Genesis Cerebral eligibility.
-
-> Note: For Brain holders, “withdrawal” refers to breaking required staking continuity.  
-> For Pickle Punk holders, “withdrawal” refers to breaking the protocol-defined continuity commitments and/or failing Proof of Care validation for the eligibility window.
+The total number of Cerebrals that may be minted during Phase 2 is intentionally unspecified and will be determined by protocol rules or governance defined elsewhere.
 
 ---
 
 ## ENS Identity and Routing (Canonical)
 
-All reward routing and progression eligibility MUST use ENS as the canonical identity layer.
+All reward routing and mint eligibility MUST use ENS as the canonical identity layer.
 
 Participants MUST resolve the protocol-defined ENS subdomain to a wallet they control in order to:
 - Receive rewards
 - Claim eligibility
-- Mint derived progression assets (e.g., Cerebrals)
-
-ENS requirements and derivation formats are specified elsewhere and are normative for this EIP’s eligibility logic.
-
----
-
-## Provenance Binding Requirement (Ethscriptions → Cerebral)
-
-When a Cerebral is minted from a Pickle Punk (Ethscription), the Cerebral mint MUST permanently bind provenance to:
-- The originating Pickle Punk inscription reference (identifier / provenance hash), and
-- The canonical ENS identity used for eligibility
-
-A Pickle Punk may be used to mint Cerebrals only according to protocol rules and MUST not permit unlimited derived mints.
+- Mint Cerebrals
 
 ---
 
 ## Expansion Cerebrals
 
-To support ecosystem growth and broader participation, the protocol authorizes Expansion Cerebrals through governance-approved Expansion Epochs.
+Expansion Cerebrals may be minted during governance-authorized Expansion Epochs.
 
 Expansion Cerebrals:
 - Are minted under defined supply constraints
 - Receive lower base reward pathways than Genesis Cerebrals
-- Retain the ability to increase reward capacity through sustained Proof of Care
-
----
-
-## Expansion Epoch I — Public & Treasury Allocations
-
-- **Total Cerebrals Minted:** 1,500  
-- **Public Mint Allocation:** 1,350  
-- **Team Treasury Allocation:** 50  
-- **Reward Treasury Allocation:** 150  
-
-Treasury-allocated Cerebrals are reserved exclusively for protocol-defined purposes, including:
-- Long-term reward sustainability
-- Ecosystem incentives and onboarding
-- Contributor recognition
-- Community-driven growth initiatives
-
----
-
-## Secondary Market Royalty Structure (Expansion Epoch I)
-
-All Expansion Epoch I Cerebrals are subject to a **3% secondary market royalty**, enforced at the contract level and distributed as follows:
-
-- **1% → Reward Treasury**  
-- **1% → Artist**  
-- **1% → Founder**  
-
----
-
-## Brain Holder Rendered Cerebral Artifacts
-
-Brain holders may be entitled to receive a rendered Cerebral NFT representing symbolic and cultural linkage to the Cerebral layer.
-
-Rendered Cerebral artifacts:
-- Are art-focused NFTs
-- May include an ENS-linked subdomain identifier
-- Do not confer staking rights
-- Do not emit rewards
-- Do not participate in governance
-
-These artifacts exist solely as identity and cultural primitives and do not constitute functional Cerebrals.
+- May increase reward capacity through sustained Proof of Care
 
 ---
 
 ## Reward Distribution Framework
 
-Cerebrals participate in protocol reward distribution through staking and epoch-based mechanisms. Reward emissions are sourced from fee allocations, royalty flows, and phase-defined distributions.
+Rewards are distributed only after the conclusion of a Phase.
 
-### Phase-based reward settlement (global rule)
-
-Rewards are distributed **after every Phase**, not mid-phase.
-
-Each Phase consists of **five (5) epochs**, with each epoch representing approximately **one (1) month** of participation. During each epoch, Zero-Knowledge Proof (ZKP) systems perform accountability analysis to validate:
-- Staking continuity (where applicable)
-- Proof of Care signatures
-- Non-interference behavior
-- Continuity commitments
+Each Phase consists of five (5) epochs. During each epoch, Zero-Knowledge Proof systems validate:
+- Continuity
+- Proof of Care
+- Non-interference
 
 No rewards are distributed mid-phase.
 
-### Phase 1 — Brain Phase (first unlock + BIT emergence)
-
-During **Phase 1**, BIT rewards are distributed to participants who:
-- Are eligible under protocol rules, and
-- Maintain Proof of Care and continuity commitments throughout Epochs 1–5, and
-- Satisfy ENS routing requirements
-
-ZKP accountability runs monthly across **Epochs 1–5**.
-
-**At the end of Phase 1 (Epoch 5),** following completion of ZKP validation, rewards are finalized.  
-Within approximately **two (2) weeks into Epoch 6**, the protocol distributes Phase 1 rewards, marking the first emergence and distribution of the **Brain Intelligence Token (BIT)** within the Bit Brains ecosystem.
-
-### Subsequent phases
-
-Each subsequent Phase follows the same structure:
-- Five epochs of participation and ZKP accountability
-- Reward eligibility determined by Proof of Care and staking/continuity requirements
-- Reward distribution occurs only after the final epoch of the Phase concludes
-
-Epochs serve as accountability and analysis intervals, while Phases serve as reward settlement boundaries.
-
 ---
 
-## Reward Pathway Hierarchy and Proof of Care
-
-The Bit Brains protocol prioritizes continuity, stewardship, and long-term participation over short-term extraction.
-
-Brains represent the earliest and longest-lived commitment within the ecosystem.
-
-Cerebrals form the second-order participation layer and receive meaningful rewards, with clear pathway differentiation:
-- **Genesis Cerebrals:** preferential pathways (earned via Genesis participation + Phase 2 continuity)
-- **Expansion Cerebrals:** public-access pathways (lower base than Genesis, upgradeable via Proof of Care)
-
-Pickle Punk progression into Genesis Cerebrals is governed by the same Proof of Care and continuity requirements and does not alter the underlying reward settlement rules.
-
----
-
-## Phase Progression and Eligibility Summary
+## Phase Summary
 
 ### Phase 1 — Brain Phase
-- Participants commit to Proof of Care + continuity.
-- ZKP accountability runs monthly across Epochs 1–5.
-- **Rewards are distributed after Epoch 5**, within ~two weeks into Epoch 6 (first BIT emergence).
+- Proof of Care and continuity commitments
+- ZK accountability across Epochs 1–5
+- First BIT distribution after Epoch 5
 
 ### Phase 2 — Cerebral Phase
-Participants become eligible to mint up to **two (2) Genesis Cerebrals** if they:
-- Maintain uninterrupted continuity across **Phase 2 Epochs 1–5**
-- Satisfy protocol staking requirements where applicable
-- Resolve ENS identity requirements
+- Cerebral mint window opens
+- Eligibility-based, explicit minting
+- No fixed supply defined in this EIP
 
-Failure to maintain continuity may reduce eligibility per protocol rules.
-
-### Phase 3 — Brainiac Phase (eligibility outcome)
-At completion of Phase 2:
-- **Two (2) Brainiacs** may be spawned if continuity requirements were fully maintained
-- **One (1) Brainiac** may be spawned if partial continuity requirements were maintained
-
----
-
-## Supply and Emissions Context
-
-The **Brain Intelligence Token (BIT)** has a maximum supply of **200,000,000 BIT**.
-
-Cerebral rewards are not guaranteed, fixed, or unconditional.
-
----
-
-## Security Considerations
-
-Cerebrals introduce staking and reward mechanisms that require safeguards against:
-- Reward manipulation
-- Sybil behavior
-- Premature extraction
-
-Safeguards and audits will be addressed in future EIPs.
-
----
-
-## Governance Considerations
-
-Changes to Cerebral issuance, allocation, royalties, or reward pathways are subject to governance processes defined elsewhere.
+### Phase 3 — Brainiac Phase
+- Eligibility outcomes determined by continuity performance
 
 ---
 
 ## Conclusion
 
-This EIP defines the Cerebral layer as a progression-based participation and reward system that prioritizes continuity, ZK-verified Proof of Care, and long-term stewardship within the Bit Brains ecosystem.
-
-Ethscriptions (Pickle Punks) are integrated as an additive Genesis rail that may evolve into Cerebrals by meeting the same Proof of Care and continuity requirements, without changing the protocol’s underlying phase structure or reward settlement rules.
+This EIP defines the Cerebral layer as a Phase-gated, eligibility-based minting system that prioritizes Proof of Care, ZK-verified accountability, ENS identity, and long-term stewardship within the Bit Brains ecosystem.
