@@ -1,112 +1,158 @@
-# EIP-0003-a: Proof of Care Expansion & Post-Epoch Three Addendum
-
-## Status
-Draft
-
-## Author
-Alex Diaz (ONGOD)
-
-## Created
-2025-12-25
-
-## Requires
-EIP-0003
-
+EIP: 0003-A
+Title: Proof of Care Expansion & Post-Epoch Three Addendum
+Author: Alex Diaz (ONGOD)
+Status: Draft
+Type: Standards Track
+Category: Core
+Created: 2025-12-25
+Requires: EIP-0003, Genesis Parameters, EIP-0004
 ---
 
 ## Abstract
 
-This addendum extends EIP-0003 by introducing post–Epoch Three specifications for Proof of Care expansion, identity continuity via ENS, privacy-preserving attestations, and the staged evolution of Bit Brains, Cerebrals, and Brainiacs.
+This addendum extends EIP-0003 by defining post–Epoch Three specifications for Proof-of-Care expansion, ENS-based identity continuity, privacy-preserving attestations, and staged evolutionary readiness.
 
-It defines how the Bit Brains website functions as a coordination, measurement, and reward interface while preserving privacy through zero-knowledge (ZK) and cryptographic attestations.
+This document introduces no independent reward guarantees or distributions. All reward settlement, evolution, and economic outcomes remain governed by the Bit Brains Genesis Parameters and governance-defined phases.
 
 ---
 
 ## Motivation
 
-Following the completion of Epoch Three and the first token distribution, the protocol requires:
+Following the completion of Epoch Three, the protocol requires:
 
-- A scalable mechanism to measure ongoing Proof of Care
+- A scalable mechanism to continue measuring Proof of Care
 - Persistent identity across epochs and evolutions
-- Privacy-preserving participation metrics
-- A framework for future mechanical evolution without protocol breakage
+- Privacy-preserving participation attestations
+- A non-breaking framework for future evolutionary mechanics
 
-This addendum formalizes those requirements.
+Epochs Four and Five are continuity and qualification epochs, not settlement events. This addendum formalizes that distinction.
 
 ---
 
 ## Specification
 
-### 1. ENS as Canonical Identity Layer
+### 1. Canonical Genesis Reference
 
-- Ethereum Name Service (ENS) SHALL serve as the primary identifier for:
-  - Proof of Care attribution
-  - Reward eligibility
-  - Evolutionary continuity
-- All future rewards, benefits, and permissions are resolved through ENS ownership.
-- ENS provides trust minimization, composability, and long-term scalability.
+This addendum inherits all Genesis constraints.
+
+Genesis parameters define the initial conditions of the protocol at inception.
+They do not represent protocol invariants and may evolve through governance,
+future EIPs, or community consensus without violating core protocol principles.
+
+No language in this document overrides Genesis reward timing, supply constraints, or participation rules.
 
 ---
 
-### 2. Proof of Care Measurement via Website Interface
+### 2. ENS as Canonical Identity Layer
 
-- The Bit Brains website functions as a protocol meter, not a custodian.
+- Ethereum Name Service (ENS) SHALL serve as the canonical identifier for:
+  - Proof-of-Care attribution
+  - Continuity tracking across epochs
+  - Reward eligibility resolution (when rewards are enabled)
+- ENS identity persists across:
+  - Epoch transitions
+  - Asset evolution
+  - Protocol phases
+- ENS resolution is required for any future reward claims or permissions.
+
+---
+
+### 3. Proof of Care Measurement via Website Interface
+
+- The Bit Brains website functions as a coordination and measurement layer, not a custodian.
 - It aggregates participation signals including:
-  - Continuous uptime
-  - Motion-based or device-based attestations
-  - Compute or GPU contribution (where applicable)
-- Participation data is used for statistical insight and reward calculation.
+  - Sustained uptime
+  - Device- or environment-based attestations
+  - Compute or contribution signals (where applicable)
+- Data is used for:
+  - Continuity verification
+  - Eligibility qualification
+  - Governance-defined analysis
+
+No reward distribution is triggered by this interface alone.
 
 ---
 
-### 3. Privacy via Zero-Knowledge Attestations
+### 4. Privacy via Zero-Knowledge Attestations
 
-- Proof of Care signals SHALL be abstracted using zero-knowledge techniques.
-- The system proves participation and consistency without exposing:
+- Proof-of-Care signals SHALL be abstracted using zero-knowledge techniques.
+- The protocol proves participation consistency without revealing:
   - Raw biometric data
-  - Device-level identifiers
+  - Device identifiers
   - Behavioral fingerprints
-- ZK attestations act as depth signals of protocol engagement.
+- ZK attestations function as depth and continuity signals, not direct payout instructions.
 
 ---
 
-### 4. Evolutionary Roadmap
+### 5. Post-Epoch Three Continuity Phase
 
-Post–Epoch Three introduces staged evolution:
+Epochs Four and Five:
 
-- **Brains** → Genesis assets with ENS identity
-- **Cerebrals** → Extensions representing delegated or amplified activity
-- **Brainiacs** → Advanced entities reflecting long-term participation depth
+- Continue Proof-of-Care measurement
+- Evaluate sustained alignment and participation
+- Finalize eligibility for:
+  - BIT reward settlement
+  - Evolutionary pathways
+  - Phase-2 participation
 
-Evolution is non-destructive and preserves identity continuity.
+No rewards are distributed at the end of Epoch Three.
+All settlement follows Genesis Parameters and governance-defined completion rules.
 
 ---
 
-### 5. Treasury-Backed Rewards
+### 6. Evolutionary Readiness (Non-Settlement)
 
-- Proof of Care rewards are substantiated by the protocol treasury.
-- Reward logic is epoch-based and adjustable.
-- Mechanics may evolve, but the principle of verifiable contribution remains invariant.
+This addendum prepares — but does not execute — evolution:
+
+- Brains → Genesis ERC-721 assets with ENS identity
+- Cerebrals → Delegated or amplified participation extensions
+- Brainiacs → Advanced representations of long-term continuity
+
+All evolution remains:
+- Non-destructive
+- Identity-preserving
+- Gated by Proof of Care, continuity, and governance
+
+---
+
+### 7. Treasury-Backed Rewards (Deferred)
+
+- Rewards originate from the protocol treasury
+- Reward logic is epoch-aware and governance-defined
+- No fixed percentages or guarantees exist
+- Distribution timing is defined exclusively by:
+  - Genesis Parameters
+  - Relevant reward EIPs (e.g., EIP-0004)
+
+This addendum introduces no independent reward triggers.
 
 ---
 
 ## Rationale
 
-This structure enables:
-- Long-lived identity without re-minting
+This structure ensures:
+
+- Clear separation between measurement and settlement
+- No premature reward assumptions
 - Privacy-first participation
-- Modular evolution of mechanics
-- Clear separation between measurement, identity, and reward layers
+- Forward-compatible evolution
+- Alignment with Genesis and future EIPs
 
 ---
 
 ## Backwards Compatibility
 
 This addendum introduces no breaking changes.
-It activates only after Epoch Three and builds directly on EIP-0003.
+
+It activates only after Epoch Three and does not alter:
+- Genesis reward timing
+- Supply constraints
+- Prior Proof-of-Care commitments
 
 ---
 
 ## Conclusion
 
-EIP-0003-a establishes the foundation for sustained, private, and identity-centric Proof of Care, ensuring the Bit Brains protocol can evolve while maintaining coherence, trust, and participant alignment.
+EIP-0003-A formalizes post-Epoch-Three continuity without violating Genesis principles.
+
+It measures alignment, preserves identity, and prepares evolution while leaving rewards, settlement, and expansion governed by Genesis Parameters and future EIPs.
