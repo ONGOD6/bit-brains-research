@@ -1,143 +1,148 @@
----
 EIP: 0003
-Title: Finalize Token Supply and Distribution Standard
+Title: Token Supply Cap and Emission Constraints Standard
 Author: Bit Brains Protocol
-Developer: On God
+Developer: OnGod
 Discussions-To: TBD
 Status: Draft
 Type: Standards Track
 Category: Economic
 Created: 2025-12-28
-Requires: EIP-0001
+Requires: EIP-0001, Genesis Parameters
 ---
 
 ## Abstract
 
-EIP-0003 defines the fixed token supply, allocation, and phased emission schedule for the Bit Brains Protocol. This specification establishes a hard-capped maximum supply, a three-phase emissions program that terminates permanently after Phase 3, and explicit allocations for protocol treasury, team, ecosystem growth, and eligibility-based rewards tied to NFT staking and Proof of Care continuity participation.
+EIP-0003 defines the fixed maximum token supply and the constraints under which
+any future emissions MAY occur within the Bit Brains protocol.
 
-At Genesis, the protocol introduces multiple on-chain participant asset types, including Genesis Brain NFTs and Pickle Punk Headshot Ethscriptions. While multiple assets may participate in Proof of Care and continuity mechanisms, token emissions remain strictly capped and are distributed solely according to protocol-defined eligibility criteria, not asset count or asset class.
+This EIP establishes a hard-capped total supply, prohibits inflationary minting,
+and constrains all token distribution to governance-defined phases and eligibility
+rules.
+
+This specification does **not** guarantee emission schedules, reward amounts, or
+distribution timing. All emissions, if any, remain subject to Proof-of-Care,
+continuity, and governance-defined settlement conditions as defined in Genesis
+Parameters and subsequent EIPs.
 
 ---
 
 ## Motivation
 
-Token launches frequently suffer from unclear allocation, inflationary drift, and premature liquidity extraction. EIP-0003 addresses these failures by enforcing a fixed maximum supply, capped emissions with no extensions, and treasury-held incentive pools aligned with long-term participation and protocol continuity.
+Token systems frequently fail due to inflationary drift, unclear issuance authority,
+and premature extraction.
 
-By explicitly recognizing multiple Genesis participant asset types while keeping emissions strictly capped, this EIP prevents misinterpretation that additional Genesis assets expand token supply or create discretionary minting authority.
-
----
-
-## Specification
-
-### Total Supply
-
-- **Maximum supply:** **200,000,000 tokens**
-- **Inflation:** None
-- **Additional emissions:** Not permitted beyond Phase 3
+This EIP enforces a strict upper bound on supply while intentionally separating
+**participation eligibility** from **emission guarantees**, ensuring that no asset
+class, participant count, or Genesis condition can implicitly expand supply or force
+distribution.
 
 ---
 
-### Phase Emissions (Hard-Capped)
+## Canonical Genesis Reference
 
-Emissions occur across three complete phases with no mid-phase unlocks and no emissions after Phase 3.
+This EIP inherits and defers to the Bit Brains Genesis Parameters.
 
-- **Phase 1:** 20,000,000 tokens
-- **Phase 2:** 20,000,000 tokens
-- **Phase 3:** 20,000,000 tokens
+Genesis parameters define the initial conditions of the protocol at inception.
+They do not represent protocol invariants and may evolve through governance,
+future EIPs, or community consensus without violating core protocol principles.
 
-**Total phase emissions:** **60,000,000 tokens (30%)**
-
-There is no Phase 4 and no discretionary minting authority.
+Nothing in this EIP guarantees rewards, fixed schedules, or emission certainty.
 
 ---
 
-### Genesis Participants and Eligibility
+## Total Supply (Invariant)
 
-At Genesis, the protocol recognizes a fixed set of **Genesis Participants (GP)**, defined as the union of:
+- **Maximum Supply:** **200,000,000 tokens**
+- **Inflation:** Prohibited
+- **Supply Expansion:** Not permitted under any circumstance
 
-- **1,500 Genesis Brain NFTs**
-- **1,500 Pickle Punk Headshot Ethscriptions**
-
-**Total Genesis Participants:** **3,000**
-
-Genesis Participants MAY participate in Proof of Care and continuity mechanisms; however, participation alone does not guarantee token emissions. Eligibility for rewards is determined by protocol-defined rules, including staking status, continuity requirements, and identity resolution (e.g., ENS-based routing), as specified in subsequent standards.
+This maximum supply is absolute and SHALL NOT be exceeded.
 
 ---
 
-### Allocation (Fully Accounted)
+## Emission Constraints (Non-Guaranteed)
 
-All tokens are accounted for within the fixed supply. Tokens intended for time-based distribution are held in vaults or escrows at genesis and released strictly according to protocol rules.
+- Token emissions, if any, MUST occur within governance-defined phases
+- Emissions MAY be constrained by epoch completion, Proof-of-Care, and continuity
+- Emissions MAY be delayed, reduced, or halted entirely
+- No emissions are permitted beyond governance-authorized phases
+
+This EIP defines **constraints**, not schedules.
+
+---
+
+## Genesis Participants and Eligibility (Non-Expansive)
+
+At Genesis, the protocol recognizes multiple participation primitives, including:
+
+- **Genesis Brains** — ERC-721 NFTs with associated Ethscription provenance
+- **Pickle Punks** — ERC-721 NFTs with associated Ethscription provenance
+
+Genesis Participants:
+- MAY participate in Proof-of-Care and continuity mechanisms
+- DO NOT expand token supply
+- DO NOT create per-asset emission entitlements
+- DO NOT imply proportional reward guarantees
+
+Eligibility for any token distribution is determined exclusively by:
+- Proof-of-Care
+- Continuity
+- ENS-resolved identity
+- Governance-defined settlement rules
+
+---
+
+## Treasury-Held Supply Segmentation (Accounting Only)
+
+For accounting and governance clarity, the total supply MAY be segmented into
+treasury-held pools. These pools do not imply guaranteed release.
 
 | Category | Tokens | % of Supply |
 |---|---:|---:|
-| **Phase Emissions Vault (Treasury-held; released across 3 phases)** | 60,000,000 | 30% |
+| Governance-Controlled Emission Reserve | 60,000,000 | 30% |
 | Treasury Reserve | 40,000,000 | 20% |
 | Team Allocation | 30,000,000 | 15% |
-| NFT Staking / Proof of Care Rewards (Treasury-held) | 40,000,000 | 20% |
-| Ecosystem Growth Treasury | 30,000,000 | 15% |
+| Proof-of-Care Incentive Reserve | 40,000,000 | 20% |
+| Ecosystem Growth Reserve | 30,000,000 | 15% |
 | **TOTAL SUPPLY** | **200,000,000** | **100%** |
 
----
-
-### Allocation Notes
-
-**Phase Emissions Vault (30%, Treasury-held)**  
-A dedicated vault containing 60,000,000 tokens reserved at genesis and released only according to the Phase 1–3 emission schedule. No tokens may be emitted beyond Phase 3.
-
-**Treasury Reserve (20%)**  
-Held to support protocol solvency, stabilization mechanisms, governance-approved initiatives, and optional buyback or burn programs if adopted by governance.
-
-**Team Allocation (15%)**  
-Reserved for contributors and operators. Vesting or lock schedules, if applicable, MUST be defined by subsequent standards or governance resolutions.
-
-**NFT Staking / Proof of Care Rewards (20%, Treasury-held)**  
-A dedicated pool reserved for rewards distributed to eligible participants who satisfy protocol-defined staking, Proof of Care, and continuity requirements. Eligibility MAY include multiple Genesis asset types but does not expand the emissions cap or alter the fixed supply.
-
-**Ecosystem Growth Treasury (15%)**  
-Reserved for ecosystem expansion, including developer grants, partnerships, infrastructure, and adoption incentives.
+All reserves are treasury-controlled and subject to governance constraints.
 
 ---
 
-## Optional Extensions (Non-Normative)
+## Allocation Notes
 
-The following mechanisms MAY be adopted via subsequent standards or governance but are not required by this EIP.
+**Governance-Controlled Emission Reserve**  
+Tokens reserved for potential phased emissions. Release is optional, conditional,
+and governance-controlled.
 
-### Progressive Downstream Exit Penalty
+**Proof-of-Care Incentive Reserve**  
+Tokens reserved for potential rewards tied to Proof-of-Care and continuity.
+No entitlement exists absent governance-defined settlement.
 
-A phased penalty MAY apply to early exits or withdrawals:
+**Team Allocation**  
+Subject to vesting or lockups as defined by governance or future standards.
 
-- Phase 1: 30%
-- Phase 2: 20%
-- Phase 3: 10%
-
-Penalties route to the Treasury Reserve.
-
----
-
-### NFT Secondary Royalties
-
-A baseline secondary royalty MAY be applied:
-
-- **3% total**
-  - 1% Founder
-  - 1% Artist
-  - 1% Treasury
+No reserve implies automatic distribution.
 
 ---
 
-### ENS-Based Reward Routing
+## ENS-Based Reward Routing
 
-Reward eligibility and routing MAY require ENS resolution as the canonical identity layer, with optional zero-knowledge proofs for eligibility verification. ENS-based routing MAY apply to Genesis Participants, including both NFTs and Ethscriptions, subject to protocol-defined eligibility requirements.
+Where rewards are distributed, ENS MAY serve as the canonical identity layer for
+routing, eligibility verification, and accountability.
+
+ENS usage does not imply reward entitlement.
 
 ---
 
 ## Security and Economic Considerations
 
-- Fixed supply prevents inflationary dilution.
-- Hard-capped emissions reduce liquidity shock risk.
-- Treasury-held incentive pools prevent uncontrolled distribution.
-- Explicit accounting improves auditability and governance clarity.
-- Explicit Genesis participant definitions prevent misinterpretation that additional Genesis assets expand supply or emissions.
+- Fixed supply prevents inflation
+- Governance gating prevents forced emissions
+- Treasury custody prevents unauthorized distribution
+- Explicit non-entitlement language prevents misinterpretation
+- Genesis participation does not expand supply or authority
 
 ---
 
