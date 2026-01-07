@@ -12,55 +12,102 @@ Genesis establishes the foundational layer of the Bit Brains protocol, including
 
 Genesis defines **what exists at inception**, not how all future behavior unfolds.
 
----
-
-## Genesis Brain Supply
-
-- **Total Genesis Brains:** 1,500  
-- **Public Allocation:** 1,300  
-- **Team / Treasury Allocation:** 200  
-
-Team and treasury Brains are subject to protocol-defined lockups and usage policies and are not intended for immediate extraction or speculative behavior.
+At Genesis, the protocol introduces:
+- Two primary ERC-721 NFT collections
+- A secondary Ethscription artifact layer
+- ENS-based identity
+- Proof-of-Care–based participation
+- BIT reward accrual mechanisms
 
 ---
 
-## Genesis Brain Utility
+## Genesis Collections and Supply
 
-Genesis Brains function as participation primitives within the protocol and enable:
+### ERC-721 Collections
+
+- **Bit Brains (ERC-721):** 1,500 total  
+- **Pickle Punks (ERC-721):** 1,500 total  
+
+**Total ERC-721 NFTs at Genesis:** 3,000
+
+### Team / Treasury Allocation
+
+- **Bit Brains (Team / Treasury):** 100  
+- **Pickle Punks (Team / Treasury):** 100  
+
+Team and treasury allocations are reserved for protocol operations, treasury management, ecosystem development, and long-term alignment. These assets are subject to protocol-defined usage policies and are not intended for short-term extraction.
+
+---
+
+## Genesis NFT Utility
+
+Genesis ERC-721 NFTs (Brains and Pickle Punks) function as participation primitives within the protocol and enable:
 
 - Eligibility for Proof-of-Care epochs
 - Eligibility for BIT reward accrual
-- Eligibility for future Cerebral evolution
+- Eligibility for future evolutionary pathways
 - Identity anchoring and reputation continuity
+
+Both collections participate equally at the protocol layer unless explicitly differentiated by governance or future EIPs.
+
+---
+
+## Secondary Ethscription Artifacts
+
+In addition to ERC-721 NFTs, the protocol supports **Ethscription-based artifacts** as a secondary, immutable layer.
+
+For both Bit Brains and Pickle Punks:
+- An associated Ethscription artifact may be minted
+- Ethscriptions are Ethereum-native call-data inscriptions
+- Ethscriptions are immutable once created
+- Each Ethscription permanently references a specific ERC-721 token ID
+- Ethscriptions possess independent hashes and provenance
+
+Ethscriptions form **separate collections** and do not replace ERC-721 NFTs. They act as immutable historical, artistic, and provenance records linked to Genesis assets.
+
+---
+
+## One-Click Dual-Asset Mint Process
+
+Through the protocol interface:
+1. A user mints or connects an ERC-721 NFT (Brain or Pickle Punk)
+2. The protocol enables minting of the associated Ethscription artifact
+3. The user receives two distinct Ethereum-native assets:
+   - One ERC-721 NFT
+   - One Ethscription artifact
+
+This process preserves independent ownership records while maintaining cryptographic linkage between assets.
 
 ---
 
 ## ENS Identity at Genesis
 
-Upon minting, each Genesis Brain is assigned an **ENS subdomain** incorporating its Brain number.
+Upon minting, each Genesis ERC-721 NFT is assigned an **ENS subdomain** incorporating its asset number.
 
 This ENS identity:
-- Persists throughout the Brain lifecycle
-- Evolves alongside Cerebral minting
-- Enables composability, reputation, and coordination
-- Serves as a foundation for future autonomous behavior
+- Persists throughout the asset lifecycle
+- Serves as the canonical reward routing identity
+- Anchors Proof-of-Care, continuity, and accountability
+- Supports future autonomous behavior and coordination
+
+ENS resolution is required for reward eligibility and protocol participation.
 
 ---
 
 ## Proof-of-Care and Epoch Participation
 
-Genesis Brains may stake and provide Proof-of-Care across the initial epochs.
+Genesis NFTs may stake and provide Proof-of-Care across the initial epochs.
 
 ### Epochs 1–3
-- Brains stake and demonstrate Proof-of-Care
+- Assets stake and demonstrate Proof-of-Care
 - BIT rewards accrue based on participation
-- No final reward distribution occurs before the end of Epoch 3
-- Staking reward parameters are announced after Epoch 2
+- No reward distribution occurs before the end of Epoch 3
+- Reward parameters are announced after Epoch 2
 
 ### Epochs 4–5
-- Full Brain staking commitment is evaluated
-- Long-term alignment and continuity are measured
-- Cerebral minting outcomes are finalized
+- Sustained staking and continuity are evaluated
+- Long-term alignment is measured
+- Eligibility for advanced evolutionary pathways is finalized
 
 ---
 
@@ -69,18 +116,13 @@ Genesis Brains may stake and provide Proof-of-Care across the initial epochs.
 Genesis rewards are **not fixed-percentage allocations**.
 
 Instead:
-- Rewards are distributed from the **protocol treasury**
+- Rewards are distributed in **BIT**
+- Rewards originate from the **protocol treasury**
 - Distribution depends on:
   - Proof-of-Care
   - Sustained staking
   - Epoch participation
   - Governance-defined parameters
-
-Treasury allocations may support:
-- Ecosystem growth
-- Infrastructure
-- Liquidity defense
-- Future incentive programs
 
 No Genesis reward allocation guarantees permanent or immutable percentages.
 
@@ -88,42 +130,34 @@ No Genesis reward allocation guarantees permanent or immutable percentages.
 
 ## Staking and Reward Mechanics
 
-- Genesis Brains must stake and provide Proof-of-Care during Epochs 1–3 to be eligible for rewards
-- BIT rewards are minted after Epoch 3
-- Staking rewards are sourced from the treasury
-- Reward rates and mechanisms may evolve through governance
+- Genesis NFTs must stake and provide Proof-of-Care during Epochs 1–5
+- BIT rewards are minted and distributed after phase completion
+- Rewards are claimable via ENS-resolved identities
+- Reward rates and mechanics may evolve through governance
 
 The protocol favors **long-term alignment over short-term extraction**.
 
 ---
 
-## Transition to Cerebral Stage
+## Phase 2: Evolutionary Pathways
 
-Each Genesis Brain is eligible to evolve into the Cerebral stage.
+Phase 2 introduces **no free assets**.
 
-- All eligible Brains receive a minimum of **one (1) Cerebral**
-- Brains that fully stake earned BIT rewards and maintain full staking through **Epochs 4 and 5** may receive **two (2) Cerebrals**
-- Partial participation results in **one (1) Cerebral**
+Instead, Genesis participants may unlock:
+- Continued BIT reward participation
+- Evolution into **Autonomous Intelligence Technology (AIT)**
+- Attachment of **Soulbound Tokens (SBTs)**
+- Node instantiation and binding
 
-This structure rewards conviction without enforcing compulsory behavior.
-
----
-
-## Future Autonomy and Evolution
-
-Brains and Cerebrals may autonomously follow different evolutionary paths in the future.
-
-However, **staking and Proof-of-Care remain the essential growth mechanisms** of the protocol.
-
-The greater the demonstrated care, continuity, and belief in the protocol’s assets, the greater the potential rewards.
+All Phase 2 outcomes are gated by Proof-of-Care, continuity, and governance-defined thresholds.
 
 ---
 
 ## Community Expansion
 
-- Team-owned Brains may be distributed to the community in later phases
-- Distribution occurs after the Cerebral stage
-- Objectives include decentralization, onboarding, and long-term sustainability
+- Team-held Genesis assets may be distributed in later phases
+- Distribution occurs post-Genesis and post-initial evolution
+- Objectives include decentralization, onboarding, and sustainability
 
 ---
 
@@ -131,4 +165,8 @@ The greater the demonstrated care, continuity, and belief in the protocol’s as
 
 Genesis establishes the foundation for identity, participation, and alignment within the Bit Brains protocol.
 
-It is intentionally flexible, governance-aware, and designed to evolve alongside the protocol itself.
+ERC-721 NFTs provide flexibility and market participation.  
+Ethscriptions provide permanence and provenance.  
+Proof-of-Care governs all progression.
+
+Genesis defines the starting state — not the endpoint.
