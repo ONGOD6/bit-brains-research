@@ -1,4 +1,3 @@
----
 EIP: 0002
 Title: Epoch Proof-of-Care (EPO) for Genesis Participants
 Author: Alex Diaz
@@ -6,7 +5,7 @@ Developer: OnGod
 Status: Draft
 Type: Standards Track
 Created: 2025-12-21
-Requires: EIP-0001, EIP-0011
+Requires: EIP-0001, EIP-0011, Genesis Parameters
 ---
 
 ## Abstract
@@ -15,13 +14,16 @@ This EIP defines the Epoch Proof-of-Care (EPO) mechanism for Genesis
 participation primitives within the Bit Brains protocol.
 
 Epochs provide discrete, time-based evaluation windows during which
-participation and care are measured to determine influence, progression,
-and reward eligibility. The mechanism prioritizes patience, sustained
-alignment, and simplicity over complex incentive structures.
+participation and care are measured to determine eligibility, continuity,
+and potential progression under protocol rules.
+
+This mechanism prioritizes patience, sustained alignment, and simplicity
+over extraction-driven or speculative incentive structures.
 
 This EIP applies uniformly to all recognized Genesis participation
-primitives, including NFTs and Ethscriptions, while allowing downstream
-standards to define differentiated outcomes.
+primitives, including ERC-721 NFTs and their associated Ethscription
+artifacts, while deferring reward settlement and evolution outcomes to
+Genesis Parameters and subsequent EIPs.
 
 ---
 
@@ -41,25 +43,41 @@ derivative cycles, productivity flywheels, or premature complexity.
 
 ---
 
+## Canonical Genesis Reference
+
+This EIP inherits and defers to the Bit Brains Genesis Parameters.
+
+Genesis parameters define the initial conditions of the protocol at
+inception. They do not represent protocol invariants and may evolve
+through governance, future EIPs, or community consensus without
+violating core protocol principles.
+
+Nothing in this EIP guarantees rewards, settlement timing, or permanent
+influence.
+
+---
+
 ## Definitions
 
 - **Genesis Participant**  
   A protocol-recognized participation primitive introduced at Genesis,
-  including Brains (ERC-721 NFTs) and Pickle Punks (Ethscriptions).
+  including ERC-721 assets and their associated secondary Ethscription
+  artifacts, together forming a dual-pathway on-chain record of Genesis
+  participation on Ethereum.
 
 - **Brain (AIT-capable)**  
-  An ERC-721 Genesis NFT whose participation may, through Proof-of-Care
-  and continuity, activate **Autonomous, Intelligent Technology (AIT)
-  state**, as defined in EIP-0011.
+  A Genesis ERC-721 NFT whose participation may, through Proof-of-Care
+  and continuity, activate **Autonomous Intelligence Technology (AIT)
+  capability**, as defined in EIP-0011.
 
-- **Pickle Punk (Ethscription)**  
-  An immutable calldata-based Genesis participation artifact that
-  participates in Epoch Proof-of-Care and continuity evaluation under
-  protocol-defined rules.
+- **Pickle Punk**  
+  A Genesis ERC-721 NFT with an associated Ethscription artifact serving
+  as an immutable calldata-based provenance record, participating in
+  Epoch Proof-of-Care under protocol-defined rules.
 
 - **Epoch**  
   A fixed-duration accounting period during which Proof-of-Care is
-  measured and influence or eligibility is evaluated.
+  measured and eligibility or continuity status is evaluated.
 
 - **Proof-of-Care (PoC)**  
   A composite set of verifiable behaviors demonstrating sustained,
@@ -76,9 +94,9 @@ Genesis Participants:
 - are evaluated uniformly for Proof-of-Care and continuity, and
 - may produce differentiated outcomes as defined in subsequent EIPs.
 
-Participation in EPO does not guarantee rewards, progression, or economic
-influence. All outcomes are contingent on protocol-defined eligibility
-rules layered atop this mechanism.
+Participation in EPO does not guarantee rewards, progression, or
+economic influence. All outcomes are contingent on Genesis Parameters,
+Proof-of-Care continuity, and governance-defined thresholds.
 
 ---
 
@@ -108,12 +126,14 @@ Each epoch proceeds through the following phases:
    signals are accumulated.
 
 3. **Finalization**  
-   Proof-of-Care signals are evaluated and eligibility, influence
-   renewal, or progression status is determined.
+   Proof-of-Care signals are evaluated and continuity or eligibility
+   status is recorded.
 
 4. **Transition**  
-   Influence renewal, decay, or eligibility outcomes are applied and the
-   next epoch begins.
+   Continuity status is carried forward and the next epoch begins.
+
+No reward settlement is required or implied at individual epoch
+boundaries.
 
 ---
 
@@ -127,25 +147,23 @@ Examples include:
 - Adherence to continuity commitments
 - Actions that support network health, alignment, and non-interference
 
-Asset ownership or capital provision alone does not constitute
-Proof-of-Care. Care must be demonstrated through continued participation
-over time.
+Asset ownership alone does not constitute Proof-of-Care. Care must be
+demonstrated through continued participation over time.
 
 ---
 
 ## Influence, Eligibility, and Rewards
 
-Influence is earned, not permanent.
+Epoch Proof-of-Care determines **eligibility and continuity**, not
+automatic reward distribution.
 
-- Influence renews through continued Proof-of-Care
+- Influence is renewable through continued Proof-of-Care
 - Influence decays in the absence of participation
-- Rewards follow influence and eligibility, not the reverse
+- Reward eligibility accrues through sustained alignment
 
-Epoch boundaries ensure that influence remains renewable and contingent
-on patience and alignment.
-
-Specific reward mechanisms, staking requirements, and progression
-outcomes are defined in subsequent EIPs.
+Reward settlement, where applicable, occurs only at governance-defined
+phase boundaries and is specified in Genesis Parameters and subsequent
+reward EIPs.
 
 ---
 
@@ -165,15 +183,12 @@ core Epoch Proof-of-Care mechanics are validated.
 
 ## Rationale
 
-Epoch-based evaluation introduces accountability through time.  
-Proof-of-Care introduces alignment through action.  
+Epoch-based evaluation introduces accountability through time.
+Proof-of-Care introduces alignment through action.
 Simplicity preserves legitimacy and long-term adaptability.
 
-Epoch rewards, where applicable, are allocated based on protocol-defined
-eligibility. Advancement and reward release are contingent upon
-satisfying Proof-of-Care criteria. In cases where Proof-of-Care is
-insufficient, rewards remain locked and progression is delayed until
-requirements are met. Rewards are neither slashed nor redistributed.
+Epoch Proof-of-Care establishes a neutral, auditable eligibility layer
+upon which reward settlement and evolution may later occur.
 
 ---
 
