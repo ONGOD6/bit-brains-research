@@ -1,5 +1,5 @@
 EIP: 0006
-Title: Genesis Parameters, Dual-Mint Architecture, and Verification Rails
+Title: Genesis Parameters, Independent Minting, and Verification Rails
 Author: Alex Diaz
 Developer: OnGod
 Status: Draft
@@ -12,8 +12,8 @@ Created: 2025-12-22
 ## Abstract
 
 This EIP defines the Genesis parameters of the Bit Brains protocol, including
-initial supply, dual-mint architecture, identity assignment, and immutable
-verification rails.
+initial asset supplies, independent minting architecture, identity assignment,
+and immutable verification rails.
 
 Genesis parameters define what exists at protocol inception. They do not define
 future behavior, incentives, or guarantees, and may evolve through governance
@@ -23,82 +23,93 @@ without violating core protocol principles.
 
 ## Genesis Supply Parameters
 
-At Genesis, the Bit Brains protocol issues two parallel asset supplies.
+At Genesis, the Bit Brains protocol introduces two independent ERC-721 NFT
+collections with separate mint flows and equal standing at the protocol layer.
 
-### Genesis Brain Supply
+### Genesis Brains
 
-- Total Genesis Brains: 1,500
+- Total Supply: 1,500
 - Public Allocation: 1,400
 - Team / Treasury Allocation: 100
 
-### Pickle Punk Supply
+### Pickle Punks
 
-- Total Pickle Punks: 1,500
+- Total Supply: 1,500
 - Public Allocation: 1,400
 - Team / Treasury Allocation: 100
 
-Genesis Brains and Pickle Punks are distinct ERC-721 NFTs.
-Neither asset is metadata of the other.
+Genesis Brains and Pickle Punks are distinct collections.
+Minting one does not require minting the other.
 
 ---
 
-## Dual-Mint Architecture
+## Independent Genesis Minting
 
-Genesis participation is established through a dual-mint process.
+Genesis participation is established through **independent minting** of protocol
+assets.
 
-For each Genesis entry, the protocol issues:
+Participants MAY choose to mint:
+- A Genesis Brain
+- A Pickle Punk
+- Both assets through separate mint actions
 
-1. One Genesis Brain (ERC-721 NFT)
-2. One Pickle Punk (ERC-721 NFT)
+There is no bundled or forced issuance of multiple NFTs.
+Each asset stands on its own mint, supply, and participation path.
 
-Both assets are protocol-recognized participation primitives and may progress
-independently through Proof of Care, continuity, and evolution standards.
+---
 
-Dual minting does not imply dependency, ownership coupling, or behavioral linkage
-between assets.
+## Per-Asset Dual Record Structure
+
+For each Genesis asset minted—whether a Genesis Brain or a Pickle Punk—the protocol
+creates a **dual record**:
+
+1. One ERC-721 NFT
+2. One immutable verification record committed to Ethereum transaction calldata
+
+This dual record structure applies independently to each asset mint.
 
 ---
 
 ## Ethscription Verification Rail (Calldata Truth Layer)
 
-For each Genesis Brain and each Pickle Punk minted, the protocol SHALL commit an
+For every Genesis Brain and every Pickle Punk minted, the protocol SHALL commit an
 immutable verification record to Ethereum transaction calldata.
 
-This Ethscription Verification Hash:
+This verification record (Ethscription Verification Hash):
 
-- Establishes a timestamped, verifiable truth that the asset was created within
-  the Bit Brains Genesis context
-- Is immutable and permanently recorded on Ethereum
-- Does not require custody, wrapping, or mutation of the NFT
+- Establishes a timestamped, verifiable truth that the asset was minted within the
+  Bit Brains Genesis context
+- Is immutable once committed
+- Does not require custody, wrapping, or mutation of the ERC-721 NFT
 - Does not alter ownership semantics
+- Exists independently of off-chain indexing or metadata
 
-Verification hashes MAY be referenced by future protocol advancements but SHALL
+Verification records MAY be referenced by future protocol advancements but SHALL
 never be modified or revoked.
 
 ---
 
 ## ENS Identity Assignment
 
-At Genesis mint, each participant receives an ENS subdomain under:
+Upon minting, each Genesis ERC-721 NFT is assigned a canonical ENS subdomain under:
 
 <index>.bitbrains.eth
 
-The assigned ENS identity becomes the canonical reference for:
+This ENS identity:
 
-- Proof of Care signaling
-- Staking participation
-- Reward routing
-- Lineage and derivation references
-- Zero-knowledge accountability proofs
+- Persists throughout the asset lifecycle
+- Serves as the canonical routing identity for rewards
+- Anchors Proof-of-Care, continuity, and accountability
+- Supports lineage, derivation, and zero-knowledge proofs
 
-ENS resolution is a required protocol primitive.
+ENS resolution is a required protocol primitive for participation and rewards.
 
 ---
 
 ## Phase and Epoch References
 
-Genesis Brains, Pickle Punks, and any derived assets participate in protocol phases
-and epochs as defined in subsequent standards.
+Genesis Brains and Pickle Punks participate in Proof-of-Care and continuity under
+protocol-defined phases and epochs as defined in subsequent standards.
 
 Genesis parameters reference the following asset-specific continuity windows:
 
@@ -114,7 +125,7 @@ of the applicable continuity window, as defined in EIP-0005.
 
 ## Zero-Knowledge Proof Commitment
 
-The protocol commits that Proof of Care, staking continuity, and eligibility
+The protocol commits that Proof-of-Care, staking continuity, and eligibility
 determinations SHALL be verifiable via zero-knowledge proofs.
 
 This EIP does not define proof systems, circuits, or implementations.
@@ -137,6 +148,6 @@ future governance, provided that:
 ## Conclusion
 
 EIP-0006 establishes the foundational truth layer of the Bit Brains protocol,
-including Genesis supply, dual-mint architecture, ENS identity assignment, and
-immutable calldata verification rails, upon which all future participation,
-evolution, and intelligence standards are built.
+including Genesis supplies, independent minting of protocol assets, ENS identity
+assignment, and immutable calldata-based verification rails upon which all future
+participation, evolution, and intelligence standards are built.
