@@ -1,179 +1,142 @@
-EIP: 0006  
-Title: Proof of Care Continuity and Staking Enforcement  
-Author: Alex Diaz  
-Developer: OnGod  
-Status: Draft  
-Type: Standards Track  
-Category: Core  
-Created: 2025-12-26  
-Requires: EIP-0001, EIP-0002, EIP-0003, EIP-0004  
+EIP: 0006
+Title: Genesis Parameters, Dual-Mint Architecture, and Verification Rails
+Author: Alex Diaz
+Developer: OnGod
+Status: Draft
+Type: Standards Track
+Category: Core
+Created: 2025-12-22
 
 ---
 
 ## Abstract
 
-This EIP defines the continuity enforcement rules for Proof of Care (PoC) and staking within the Bit Brains Protocol.
+This EIP defines the Genesis parameters of the Bit Brains protocol, including
+initial supply, dual-mint architecture, identity assignment, and immutable
+verification rails.
 
-It establishes mandatory continuity requirements across epochs and phases, specifies disqualification and eligibility rules, and defines how interruptions in participation affect rewards, progression, and advancement into higher protocol states.
-
-This EIP applies uniformly across all Genesis participation primitives, including Brains, Pickle Punks (Ethscriptions), and derived Cerebrals, without altering the underlying epoch or reward mechanics defined in earlier standards.
-
----
-
-## Motivation
-
-The Bit Brains protocol prioritizes long-term alignment over short-term participation.
-
-Without explicit continuity enforcement, participants could extract rewards by temporarily participating at critical moments without maintaining sustained care. This EIP ensures that Proof of Care is not symbolic but continuous, measurable, and enforceable.
-
-Continuity is treated as a protocol invariant rather than an optional behavior.
+Genesis parameters define what exists at protocol inception. They do not define
+future behavior, incentives, or guarantees, and may evolve through governance
+without violating core protocol principles.
 
 ---
 
-## Definitions
+## Genesis Supply Parameters
 
-- **Continuity**  
-  Uninterrupted satisfaction of Proof of Care requirements across a defined sequence of epochs.
+At Genesis, the Bit Brains protocol issues two parallel asset supplies.
 
-- **Proof of Care (PoC)**  
-  Verifiable behaviors demonstrating sustained, constructive participation as defined in EIP-0002.
+### Genesis Brain Supply
 
-- **Epoch**  
-  A fixed-duration accountability window during which PoC is evaluated.
+- Total Genesis Brains: 1,500
+- Public Allocation: 1,400
+- Team / Treasury Allocation: 100
 
-- **Phase**  
-  A group of five (5) consecutive epochs forming a reward settlement boundary.
+### Pickle Punk Supply
 
-- **Genesis Participant**  
-  A protocol-recognized participation primitive introduced at Genesis, including Brains and Pickle Punks.
+- Total Pickle Punks: 1,500
+- Public Allocation: 1,400
+- Team / Treasury Allocation: 100
 
-- **Staking Asset**  
-  An asset that is required to remain staked to maintain continuity, as defined by protocol rules.
-
----
-
-## Continuity Requirement (Global)
-
-Continuity is mandatory for:
-
-- Reward eligibility
-- Advancement between phases
-- Cerebral mint eligibility
-- Autonomous Intelligent Technology (AIT) eligibility
-- RWA attribution eligibility
-
-Failure to maintain continuity during a required window results in delayed or reduced eligibility.
+Genesis Brains and Pickle Punks are distinct ERC-721 NFTs.
+Neither asset is metadata of the other.
 
 ---
 
-## Continuity Windows
+## Dual-Mint Architecture
 
-Continuity is evaluated over explicit windows defined by protocol phase rules.
+Genesis participation is established through a dual-mint process.
 
-### Phase-Level Continuity
+For each Genesis entry, the protocol issues:
 
-- Each Phase consists of five (5) epochs
-- Full continuity requires uninterrupted PoC across all five epochs
-- Partial continuity MAY be recognized for reduced outcomes as defined in later EIPs
+1. One Genesis Brain (ERC-721 NFT)
+2. One Pickle Punk (ERC-721 NFT)
 
----
+Both assets are protocol-recognized participation primitives and may progress
+independently through Proof of Care, continuity, and evolution standards.
 
-## Staking and Continuity Enforcement
-
-### Brains
-
-- Brains MUST remain staked continuously during required continuity windows
-- Unstaking during a required window breaks continuity
-- Breaking continuity disqualifies the Brain from full eligibility for that Phase
-
-### Pickle Punks (Ethscriptions)
-
-- Pickle Punks do not stake
-- Continuity is enforced through:
-  - Proof of Care signals
-  - Identity persistence (ENS)
-  - Epoch participation validation
-
-Failure to satisfy continuity requirements disqualifies the Pickle Punk from progression outcomes for that window.
+Dual minting does not imply dependency, ownership coupling, or behavioral linkage
+between assets.
 
 ---
 
-## Continuity Failure and Recovery
+## Ethscription Verification Rail (Calldata Truth Layer)
 
-- Continuity failure does NOT permanently disqualify a participant
-- Failed windows MUST be reattempted in full
-- Progression resumes only after continuity is re-established across a complete window
+For each Genesis Brain and each Pickle Punk minted, the protocol SHALL commit an
+immutable verification record to Ethereum transaction calldata.
 
-Continuity failures do not slash rewards and do not redistribute locked rewards.
+This Ethscription Verification Hash:
 
----
+- Establishes a timestamped, verifiable truth that the asset was created within
+  the Bit Brains Genesis context
+- Is immutable and permanently recorded on Ethereum
+- Does not require custody, wrapping, or mutation of the NFT
+- Does not alter ownership semantics
 
-## Impact on Rewards
-
-- Rewards accrue only during epochs where continuity is maintained
-- Rewards associated with incomplete continuity windows remain locked
-- Locked rewards MAY become claimable once continuity is successfully re-established
-
-Rewards are never redistributed to other participants.
+Verification hashes MAY be referenced by future protocol advancements but SHALL
+never be modified or revoked.
 
 ---
 
-## Interaction with Cerebral Minting
+## ENS Identity Assignment
 
-- Genesis Cerebral mint eligibility requires full continuity across the defined eligibility window
-- Partial continuity MAY reduce mint quantity or delay mint eligibility
-- Continuity enforcement applies equally to:
-  - Brain-derived Cerebrals
-  - Pickle Punk–derived Cerebrals
+At Genesis mint, each participant receives an ENS subdomain under:
 
----
+<index>.bitbrains.eth
 
-## Interaction with AIT Eligibility
+The assigned ENS identity becomes the canonical reference for:
 
-- AIT eligibility requires uninterrupted continuity across protocol-defined windows
-- Continuity failure delays, but does not eliminate, AIT eligibility
-- All AIT lineage remains bound to the originating asset via ENS and immutable metadata
+- Proof of Care signaling
+- Staking participation
+- Reward routing
+- Lineage and derivation references
+- Zero-knowledge accountability proofs
 
----
-
-## Non-Custodial Enforcement
-
-Continuity enforcement does not require:
-
-- Custody of participant funds
-- Forced transactions
-- Automatic slashing
-
-All enforcement occurs through eligibility gating and reward locking.
+ENS resolution is a required protocol primitive.
 
 ---
 
-## Security Considerations
+## Phase and Epoch References
 
-Continuity enforcement mitigates:
+Genesis Brains, Pickle Punks, and any derived assets participate in protocol phases
+and epochs as defined in subsequent standards.
 
-- Opportunistic participation
-- Epoch boundary exploitation
-- Reward extraction without sustained care
+Genesis parameters reference the following asset-specific continuity windows:
 
-No enforcement mechanism may introduce discretionary or subjective judgment.
+- Genesis Brains: five (5) epochs
+- Cerebrals: four (4) epochs
+- Brainiacs: three (3) epochs
+
+Eligibility for Autonomous Intelligent Technology (AIT) activation is evaluated
+independently per asset class and becomes effective immediately upon completion
+of the applicable continuity window, as defined in EIP-0005.
 
 ---
 
-## Governance Considerations
+## Zero-Knowledge Proof Commitment
 
-Changes to continuity windows, enforcement severity, or recovery rules require governance approval and MUST be defined in subsequent EIPs.
+The protocol commits that Proof of Care, staking continuity, and eligibility
+determinations SHALL be verifiable via zero-knowledge proofs.
+
+This EIP does not define proof systems, circuits, or implementations.
+
+---
+
+## Non-Invariants
+
+Genesis parameters define initial conditions only.
+
+They do not represent immutable protocol invariants and may be revised through
+future governance, provided that:
+
+- Existing on-chain records remain valid
+- Verification rails remain immutable
+- Identity and lineage guarantees are preserved
 
 ---
 
 ## Conclusion
 
-This EIP establishes continuity as a core invariant of the Bit Brains Protocol.
-
-By enforcing uninterrupted Proof of Care across defined windows, the protocol ensures that rewards, progression, and autonomous evolution remain aligned with long-term stewardship rather than short-term participation.
-
----
-
-## Copyright
-
-Copyright and related rights waived via CC0.
+EIP-0006 establishes the foundational truth layer of the Bit Brains protocol,
+including Genesis supply, dual-mint architecture, ENS identity assignment, and
+immutable calldata verification rails, upon which all future participation,
+evolution, and intelligence standards are built.
