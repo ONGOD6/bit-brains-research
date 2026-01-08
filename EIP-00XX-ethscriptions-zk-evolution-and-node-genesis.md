@@ -15,20 +15,19 @@ This EIP defines the Ethscriptions participation rail within the Bit Brains prot
 
 The Ethscriptions Rail is an additive and experimental pathway that allows calldata-provenance assets to participate in Proof of Care and continuity with the goal of evolving into Autonomous Intelligent Technology (AIT) and ultimately a Node identity verified by an ERC-721 mint.
 
+Participation, staking, and reward eligibility for the Ethscriptions Rail are explicitly disabled until the completion of all three canonical NFT phases: Brain, Cerebral, and Brainiac.
+
 This proposal is descriptive and structural. It does not define economic guarantees, yield formulas, or market expectations.
 
 ---
 
 ## Motivation
 
-The Bit Brains protocol is designed to reward long-term alignment, continuity, and care rather than short-term activity or frequent on-chain mutation.
+The Bit Brains protocol is designed to prioritize foundational stewardship before expansion.
 
-In addition to the canonical NFT rail (Brains, Cerebrals, and Brainiacs), the protocol intentionally allows Ethscriptions to participate as an experimental evolution rail. This design serves two purposes:
+Brains, Cerebrals, and Brainiacs represent the core identity and participation layers of the protocol. Allowing experimental rails to activate before these layers are fully established would dilute continuity signals and weaken protocol guarantees.
 
-1. To explore whether calldata-provenance assets can evolve into Autonomous Intelligent Technology through verifiable care and continuity, and
-2. To provide an additional incentive layer for participants who originally entered the protocol through Brains, Cerebrals, or Brainiacs to continue progressing toward full Node actualization.
-
-The Ethscriptions Rail does not dilute or replace the NFT rail. Instead, it adds an additional pathway that converges at the same Node recognition point, reinforcing long-term participation and protocol stewardship.
+Accordingly, the Ethscriptions Rail is intentionally delayed. Its activation serves as an additional incentive layer for long-term participants who have already progressed through or supported the canonical NFT phases.
 
 ---
 
@@ -44,9 +43,32 @@ The Ethscriptions Rail does not dilute or replace the NFT rail. Instead, it adds
 
 ---
 
+## Activation Constraint (Canonical)
+
+The Ethscriptions Rail MUST remain inactive until the Bit Brains protocol has completed the following phases:
+
+1. **Brain Phase**
+2. **Cerebral Phase**
+3. **Brainiac Phase**
+
+Completion is defined by protocol-determined criteria (supply exhaustion, epoch completion, or governance-defined thresholds).
+
+Until all three phases are complete:
+
+- Ethscriptions MAY be created or held,
+- but MUST NOT be eligible for:
+  - staking,
+  - Proof of Care evaluation,
+  - continuity tracking,
+  - reward distribution,
+  - AIT activation,
+  - or Node recognition.
+
+---
+
 ## Canonical Model: ZK-Gated Evolution
 
-All evolutionary state transitions within the Ethscriptions Rail are validated via ZK proofs.
+Once activated, all evolutionary state transitions within the Ethscriptions Rail are validated via ZK proofs.
 
 ZK proofs act as the canonical truth layer for progression and are used to demonstrate that continuity and Proof of Care requirements have been satisfied for the full duration of an epoch.
 
@@ -54,9 +76,9 @@ No ERC-721 mint and no Ethscription issuance occurs unless a milestone state is 
 
 ---
 
-## Evolutionary States
+## Evolutionary States (Post-Activation Only)
 
-Ethscriptions Rail assets progress through the following states:
+After the activation constraint is lifted, Ethscriptions Rail assets MAY progress through the following states:
 
 ### State 0 — Dormant (ZK Verifiable)
 The asset exists but is not registered in the Bit Brains protocol.
@@ -93,16 +115,6 @@ All other evolutionary progress is proven exclusively via ZK proofs and does not
 
 ---
 
-## Canonical Ethscription Rule
-
-Ethscriptions are issued only when an ERC-721 milestone mint occurs.
-
-> No ERC-721 mint → no new Ethscription.
-
-Ethscriptions encode immutable commitments including lineage references, verified state commitments, epoch completion attestations, and Node genesis proofs.
-
----
-
 ## Uniqueness and Anti-Replay Constraints
 
 Node minting MUST enforce protocol-defined uniqueness constraints.
@@ -112,31 +124,19 @@ A valid ZK proof MUST attest that:
 - the proof has not been replayed, and
 - no conflicting Node genesis exists.
 
-Uniqueness constraints may be enforced through ZK proofs, on-chain checks, or a combination of both.
-
 ---
 
 ## Relationship to the NFT Rail
 
-The Ethscriptions Rail is explicitly additive.
+The Ethscriptions Rail is explicitly additive and sequential.
 
-Brains, Cerebrals, and Brainiacs remain the primary entry assets to the Bit Brains protocol. The Ethscriptions Rail provides an additional experimental incentive layer that encourages continued participation, long-term alignment, and progression toward Node status.
+Brains, Cerebrals, and Brainiacs MUST complete their respective phases before the Ethscriptions Rail may activate.
 
-Both rails converge on the same Bit Brains invariants:
+Once active, both rails converge on the same Bit Brains invariants:
 - epoch-based continuity,
 - Proof of Care gating,
 - ZK-verified state transitions, and
 - immutable Node genesis via ERC-721 mint and Ethscription record.
-
----
-
-## Security Considerations
-
-This model minimizes attack surface by:
-- reducing unnecessary on-chain state changes,
-- relying on cryptographic proofs for eligibility,
-- limiting mint authority to verified milestone events, and
-- preserving immutable historical records for auditability.
 
 ---
 
