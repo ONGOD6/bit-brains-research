@@ -71,13 +71,13 @@ This EIP defines constraints, not guaranteed schedules.
 
 ## Treasury-Held Supply Segmentation (Accounting Only)
 
-Category                                  Tokens       % of Supply
-Governance-Controlled Emission Reserve     60,000,000   30%
-Treasury Reserve                          40,000,000   20%
-Team Allocation                           30,000,000   15%
-Proof-of-Care Incentive Reserve           40,000,000   20%
-Ecosystem Growth Reserve                  30,000,000   15%
-TOTAL SUPPLY                              200,000,000  100%
+Category                                  Tokens       % of Supply  
+Governance-Controlled Emission Reserve     60,000,000   30%  
+Treasury Reserve                          40,000,000   20%  
+Team Allocation                           30,000,000   15%  
+Proof-of-Care Incentive Reserve           40,000,000   20%  
+Ecosystem Growth Reserve                  30,000,000   15%  
+TOTAL SUPPLY                              200,000,000  100%  
 
 All reserves are treasury-controlled. No reserve implies guaranteed distribution.
 
@@ -142,6 +142,8 @@ This pool:
 - is distributed **only among participants who continue staking their earned rewards**
 - is not available to participants who withdraw or make rewards liquid
 
+If **no participants qualify** by restaking rewards for a phase, that phase’s continuity bonus pool MUST NOT be distributed and remains in treasury or preserved reserves.
+
 ---
 
 ### Eligibility (All Required)
@@ -166,7 +168,7 @@ Let:
 
 Then:
 
-Bonus_u = B_phase × (R_u / R_restaked_total)
+`Bonus_u = B_phase × (R_u / R_restaked_total)`
 
 Participants who do not restake rewards receive **no share** of the pool.
 
