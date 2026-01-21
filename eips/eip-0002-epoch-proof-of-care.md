@@ -5,7 +5,7 @@ Developer: OnGod
 Status: Draft
 Type: Standards Track
 Created: 2025-12-21
-Requires: EIP-0001, EIP-0011, Genesis Parameters
+Requires: EIP-0001, EIP-0011, Genesis Parameters, Ethscriptions Rail EIP
 ---
 
 ## Abstract
@@ -20,10 +20,13 @@ and potential progression under protocol rules.
 This mechanism prioritizes patience, sustained alignment, and simplicity
 over extraction-driven or speculative incentive structures.
 
-This EIP applies uniformly to all recognized Genesis participation
-primitives, including ERC-721 NFTs and their associated Ethscription
-artifacts, while deferring reward settlement and evolution outcomes to
-Genesis Parameters and subsequent EIPs.
+EPO is evaluated at the level of the **Paired Asset**, composed of a
+canonical ERC-721 NFT and its associated Ethscription artifact. Proof-of-Care,
+continuity accrual, and eligibility are recognized only when the Paired Asset
+satisfies dual-asset staking requirements.
+
+This EIP defers reward settlement and evolution outcomes to Genesis Parameters
+and subsequent EIPs.
 
 ---
 
@@ -59,44 +62,74 @@ influence.
 
 ## Definitions
 
-- **Genesis Participant**  
-  A protocol-recognized participation primitive introduced at Genesis,
-  including ERC-721 assets and their associated secondary Ethscription
-  artifacts, together forming a dual-pathway on-chain record of Genesis
-  participation on Ethereum.
+- **ERC-721 Asset**
+  A canonical Bit Brains protocol NFT (Brain, Cerebral, Brainiac, Pickle Punk,
+  or successor).
 
-- **Brain (AIT-capable)**  
-  A Genesis ERC-721 NFT whose participation may, through Proof-of-Care
-  and continuity, activate **Autonomous Intelligence Technology (AIT)
-  capability**, as defined in EIP-0011.
+- **Ethscription Artifact**
+  A calldata-provenance artifact committed to Ethereum via the Ethscriptions
+  mechanism, serving as immutable provenance and protocol verification record.
 
-- **Pickle Punk**  
-  A Genesis ERC-721 NFT with an associated Ethscription artifact serving
-  as an immutable calldata-based provenance record, participating in
-  Epoch Proof-of-Care under protocol-defined rules.
+- **Paired Asset (Genesis Participant)**
+  The canonical participation unit evaluated by the protocol, composed of:
+  1) an ERC-721 Asset, and
+  2) its associated Ethscription Artifact.
 
-- **Epoch**  
-  A fixed-duration accounting period during which Proof-of-Care is
-  measured and eligibility or continuity status is evaluated.
+  All Epoch Proof-of-Care evaluation applies to the Paired Asset as a single unit.
+  Neither component qualifies independently.
 
-- **Proof-of-Care (PoC)**  
-  A composite set of verifiable behaviors demonstrating sustained,
-  constructive engagement during an epoch.
+- **Brain (AIT-capable)**
+  A Genesis Brain ERC-721 Asset paired with its Ethscription Artifact whose
+  participation may, through Proof-of-Care and continuity, activate Autonomous
+  Intelligent Technology (AIT) capability, as defined in EIP-0011.
+
+- **Pickle Punk**
+  A Genesis Pickle Punk ERC-721 Asset paired with its Ethscription Artifact,
+  participating in Epoch Proof-of-Care under protocol-defined rules.
+
+- **Epoch**
+  A fixed-duration accounting period during which Proof-of-Care is measured and
+  eligibility or continuity status is evaluated.
+
+- **Proof-of-Care (PoC)**
+  A composite set of verifiable behaviors demonstrating sustained, constructive
+  engagement during an epoch.
+
+---
+
+## Dual-Asset Participation Invariant
+
+Epoch Proof-of-Care is measured only for **Qualifying** Paired Assets.
+
+A Paired Asset is **Qualifying** during an epoch only when:
+- the ERC-721 Asset is staked under protocol rules, AND
+- the associated Ethscription Artifact is concurrently staked, registered, or
+  otherwise maintained in good standing under protocol rules.
+
+If either component is unstaked, missing, invalid, or noncompliant during the
+evaluation window, the Paired Asset becomes **Non-Qualifying** for that period.
+
+Non-Qualifying status results in:
+- no continuity accrual for the affected window, and
+- no eligibility accumulation attributable to that window,
+as defined by governance and subsequent EIPs.
+
+This EIP does not define settlement mechanics.
 
 ---
 
 ## Epoch Applicability
 
-Epoch Proof-of-Care applies to **all Genesis Participants**.
+Epoch Proof-of-Care applies to all Genesis Participants as Paired Assets.
 
-Genesis Participants:
+Paired Assets:
 - may be staked under protocol-defined rules,
 - are evaluated uniformly for Proof-of-Care and continuity, and
 - may produce differentiated outcomes as defined in subsequent EIPs.
 
 Participation in EPO does not guarantee rewards, progression, or
 economic influence. All outcomes are contingent on Genesis Parameters,
-Proof-of-Care continuity, and governance-defined thresholds.
+Proof-of-Care continuity, dual-asset staking, and governance-defined thresholds.
 
 ---
 
@@ -118,22 +151,20 @@ defined in EIP-0001.
 
 Each epoch proceeds through the following phases:
 
-1. **Initialization**  
+1. **Initialization**
    Epoch parameters are fixed and the prior epoch state is finalized.
 
-2. **Active Phase**  
-   Genesis Participants engage with the protocol and Proof-of-Care
-   signals are accumulated.
+2. **Active Phase**
+   Paired Assets engage with the protocol and Proof-of-Care signals are accumulated.
 
-3. **Finalization**  
-   Proof-of-Care signals are evaluated and continuity or eligibility
-   status is recorded.
+3. **Finalization**
+   Proof-of-Care signals are evaluated and continuity or eligibility status is recorded
+   for Qualifying Paired Assets.
 
-4. **Transition**  
+4. **Transition**
    Continuity status is carried forward and the next epoch begins.
 
-No reward settlement is required or implied at individual epoch
-boundaries.
+No reward settlement is required or implied at individual epoch boundaries.
 
 ---
 
