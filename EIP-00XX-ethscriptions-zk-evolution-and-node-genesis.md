@@ -1,5 +1,5 @@
-EIP: 00XX
-Title: Ethscriptions Rail — ZK-Gated Evolution and Node Genesis
+00XX
+Title: Ethscriptions Rail — Dual-Asset ZK-Gated Evolution and Node Genesis
 Author: Alex Diaz
 Developer: OnGod
 Status: Draft
@@ -11,11 +11,11 @@ Requires: EIP-0001, EIP-0004, ZK Proof Verification Layer
 
 ## Abstract
 
-This EIP defines the Ethscriptions participation rail within the Bit Brains protocol and specifies a ZK-gated evolutionary model in which protocol state transitions are proven via zero-knowledge proofs and only materialized on-chain at defined milestone events.
+This EIP defines the Ethscriptions participation rail within the Bit Brains protocol and specifies a **dual-asset, ZK-gated evolutionary model** in which protocol state transitions are proven via zero-knowledge proofs and materialized on-chain only at defined milestone events.
 
-The Ethscriptions Rail is an additive and experimental pathway that allows calldata-provenance assets to participate in Proof of Care and continuity with the goal of evolving into Autonomous Intelligent Technology (AIT) and ultimately a Node identity verified by an ERC-721 mint.
+The Ethscriptions Rail operates as a **paired asset system**, where a canonical ERC-721 NFT and its corresponding Ethscription artifact form a single evolutionary unit. Participation, staking, reward eligibility, Autonomous Intelligent Technology (AIT) activation, and Node genesis require **concurrent staking and verification of both assets**.
 
-Participation, staking, and reward eligibility for the Ethscriptions Rail are explicitly disabled until the completion of all three canonical NFT phases: Brain, Cerebral, and Brainiac.
+All evolution occurs atomically at the paired-asset level. No asset may evolve, qualify, or transform independently.
 
 This proposal is descriptive and structural. It does not define economic guarantees, yield formulas, or market expectations.
 
@@ -23,81 +23,108 @@ This proposal is descriptive and structural. It does not define economic guarant
 
 ## Motivation
 
-The Bit Brains protocol is designed to prioritize foundational stewardship before expansion.
+The Bit Brains protocol is designed around continuity, verifiable stewardship, and non-fragmented evolution.
 
-Brains, Cerebrals, and Brainiacs represent the core identity and participation layers of the protocol. Allowing experimental rails to activate before these layers are fully established would dilute continuity signals and weaken protocol guarantees.
+Allowing ERC-721 assets or Ethscription artifacts to progress independently would weaken protocol guarantees, introduce ambiguity in lineage, and undermine long-term intelligence attribution.
 
-Accordingly, the Ethscriptions Rail is intentionally delayed. Its activation serves as an additional incentive layer for long-term participants who have already progressed through or supported the canonical NFT phases.
+Accordingly, the protocol enforces **dual-asset evolution**, where calldata provenance (Ethscriptions) and programmable ownership (ERC-721 NFTs) advance together under a unified eligibility model.
+
+This approach preserves:
+- immutable provenance,
+- non-custodial ownership,
+- cryptographic verifiability, and
+- atomic Node genesis.
 
 ---
 
 ## Definitions
 
-- **Ethscription Asset:** A calldata-provenance asset committed to Ethereum via the Ethscriptions mechanism.
+- **Ethscription Asset:** A calldata-provenance artifact committed to Ethereum via the Ethscriptions mechanism.
+- **ERC-721 Asset:** A canonical Bit Brains NFT (Brain, Cerebral, Brainiac, or successor).
+- **Paired Asset:** The inseparable evolutionary unit composed of an ERC-721 asset and its corresponding Ethscription artifact.
 - **Epoch:** A Bit Brains–defined continuity window used to evaluate long-term alignment.
-- **Continuity:** Time-based participation requirement enforced across an epoch.
+- **Continuity:** Time-based participation requirements enforced across an epoch.
 - **Proof of Care (PoC):** Verifiable participation signals required for progression.
 - **AIT State:** Autonomous Intelligent Technology activation state recognized by the Bit Brains protocol.
-- **Node State:** A recognized execution and identity state derived from a qualified asset.
-- **ZK Proof Protocol:** The Bit Brains verification layer used to prove eligibility, continuity, and PoC without revealing sensitive information.
+- **Node State:** A recognized execution and identity state derived from a qualified Paired Asset.
+- **ZK Proof Protocol:** The Bit Brains verification layer used to prove eligibility, continuity, and Proof of Care without revealing sensitive information.
+
+---
+
+## Dual-Asset Evolution Invariant (Canonical)
+
+All Bit Brains protocol evolution, including Proof of Care evaluation, AIT activation, and Node genesis, SHALL be governed by a **Dual-Asset Evolution Invariant**.
+
+A position is considered **Qualifying** only when BOTH of the following assets are concurrently staked and in good standing:
+
+1. The canonical **ERC-721 NFT**, and  
+2. Its **paired Ethscription artifact** serving as immutable calldata provenance.
+
+The ERC-721 asset and Ethscription artifact together form a single **Paired Asset**.
+
+No protocol-defined evolution, reward eligibility, continuity accumulation, AIT activation, or Node recognition SHALL occur unless the Paired Asset remains concurrently staked for the full required continuity window.
+
+If either asset is unstaked, invalid, or noncompliant, the position becomes **Non-Qualifying**.
 
 ---
 
 ## Activation Constraint (Canonical)
 
-The Ethscriptions Rail MUST remain inactive until the Bit Brains protocol has completed the following phases:
+The Ethscriptions Rail is defined at Genesis but remains **Non-Qualifying** until completion of the following canonical NFT phases:
 
 1. **Brain Phase**
 2. **Cerebral Phase**
 3. **Brainiac Phase**
 
-Completion is defined by protocol-determined criteria (supply exhaustion, epoch completion, or governance-defined thresholds).
+Ethscriptions MAY be created, held, and paired at any time.
 
-Until all three phases are complete:
+However, an Ethscription SHALL NOT independently qualify for:
+- staking,
+- Proof of Care evaluation,
+- continuity tracking,
+- reward eligibility,
+- AIT activation, or
+- Node recognition.
 
-- Ethscriptions MAY be created or held,
-- but MUST NOT be eligible for:
-  - staking,
-  - Proof of Care evaluation,
-  - continuity tracking,
-  - reward distribution,
-  - AIT activation,
-  - or Node recognition.
+Qualification is achieved **only** when the paired ERC-721 asset reaches the applicable phase AND both assets are concurrently staked under the Dual-Asset Evolution Invariant.
 
 ---
 
-## Canonical Model: ZK-Gated Evolution
+## Canonical Model: ZK-Gated Dual-Asset Evolution
 
-Once activated, all evolutionary state transitions within the Ethscriptions Rail are validated via ZK proofs.
+All evolutionary state transitions within the Bit Brains protocol are evaluated at the level of the **Paired Asset** and validated via zero-knowledge proofs.
 
-ZK proofs act as the canonical truth layer for progression and are used to demonstrate that continuity and Proof of Care requirements have been satisfied for the full duration of an epoch.
+ZK proofs attest that the ERC-721 asset and its paired Ethscription artifact have:
+- remained concurrently staked,
+- satisfied continuity requirements for the full epoch, and
+- met Proof of Care conditions.
 
-No ERC-721 mint and no Ethscription issuance occurs unless a milestone state is reached and successfully verified.
+No evolution, AIT activation, or Node recognition SHALL be materialized on-chain unless a ZK proof verifies the complete Paired Asset state history.
 
 ---
 
 ## Evolutionary States (Post-Activation Only)
 
-After the activation constraint is lifted, Ethscriptions Rail assets MAY progress through the following states:
+All states described below apply to the **Paired Asset as a single evolutionary unit** and not to the ERC-721 asset or Ethscription independently.
 
 ### State 0 — Dormant (ZK Verifiable)
-The asset exists but is not registered in the Bit Brains protocol.
+The Paired Asset exists but is not registered within the Bit Brains protocol.
 
 ### State 1 — Registered (ZK Verifiable)
-The asset is registered for an epoch under Bit Brains protocol rules. Registration status is proven via ZK proof.
+The Paired Asset is registered for an epoch under protocol rules. Registration status is proven via ZK proof.
 
 ### State 2 — Proof of Care Proven (ZK Verifiable)
 Continuity and Proof of Care requirements for the epoch are satisfied and proven via ZK proof.
 
-### State 3 — AIT Activated (ZK Verifiable)
-The asset achieves Autonomous Intelligent Technology activation status, proven via ZK proof.
+### State 3 — AIT Activated (Paired Asset, ZK Verifiable)
+The Paired Asset achieves Autonomous Intelligent Technology activation status, proven via ZK proof.
 
-### State 4 — Node Recognized (ZK Verifiable + Mint Event)
-A Node is recognized only when a valid ZK proof attests to the correctness and truthfulness of the full required state history and eligibility constraints.
+### State 4 — Node Recognized (Paired Asset, ZK Verifiable + Mint Event)
+A Node is recognized only when a valid ZK proof attests to the correctness and truthfulness of the full required Paired Asset state history and eligibility constraints.
 
 Upon successful verification:
 
-1. A **Node ERC-721** is minted as the canonical asset verification of Node status, and  
+1. A **Node ERC-721** is minted as the canonical verification of Node status, and  
 2. A **new Ethscription** is issued as the immutable calldata record of Node genesis.
 
 ---
@@ -111,6 +138,8 @@ ERC-721 mints and Ethscription issuance occur only at the following milestone le
 3. **Brainiac** — ERC-721 mint + Ethscription  
 4. **Node Genesis** — ERC-721 mint + Ethscription  
 
+All mint events represent the **simultaneous evolution of the ERC-721 asset and its paired Ethscription artifact** and SHALL NOT be executed independently.
+
 All other evolutionary progress is proven exclusively via ZK proofs and does not result in on-chain minting.
 
 ---
@@ -120,7 +149,7 @@ All other evolutionary progress is proven exclusively via ZK proofs and does not
 Node minting MUST enforce protocol-defined uniqueness constraints.
 
 A valid ZK proof MUST attest that:
-- the asset lineage has not previously produced a Node under the applicable rules,
+- the Paired Asset lineage has not previously produced a Node under the applicable rules,
 - the proof has not been replayed, and
 - no conflicting Node genesis exists.
 
@@ -128,15 +157,16 @@ A valid ZK proof MUST attest that:
 
 ## Relationship to the NFT Rail
 
-The Ethscriptions Rail is explicitly additive and sequential.
+The Ethscriptions Rail is not independent of the NFT Rail.
 
-Brains, Cerebrals, and Brainiacs MUST complete their respective phases before the Ethscriptions Rail may activate.
-
-Once active, both rails converge on the same Bit Brains invariants:
+Both rails converge on the same Bit Brains invariants:
 - epoch-based continuity,
 - Proof of Care gating,
+- dual-asset staking,
 - ZK-verified state transitions, and
-- immutable Node genesis via ERC-721 mint and Ethscription record.
+- immutable Node genesis.
+
+The ERC-721 asset and Ethscription artifact SHALL always evolve as a **single Paired Asset**.
 
 ---
 
