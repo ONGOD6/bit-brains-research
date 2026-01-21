@@ -6,106 +6,106 @@ Status: Draft
 Type: Standards Track
 Category: Core
 Created: 2025-12-22
+Requires: EIP-0001, EIP-0002, EIP-0003, EIP-0004, Ethscriptions Rail EIP
 
 ---
 
 ## Abstract
 
-This EIP defines the conceptual and technical framework by which Bit Brains protocol
-assets may evolve from participation-based primitives into Autonomous Intelligent
-Technology (AIT).
+This EIP defines the canonical framework by which Bit Brains protocol assets
+may evolve from participation-based primitives into **Autonomous Intelligent
+Technology (AIT)** and, where applicable, into **Node execution capability**.
 
-After completing the Proof of Care, continuity, and epoch-based participation
-requirements applicable to a given asset class, eligible assets—including Genesis
-Brains, Cerebrals, Brainiacs, and dual-minted Pickle Punk NFTs—MAY enter an autonomous
-operational state.
+AIT activation and Node derivation are evaluated **only at the Paired Asset
+level**, composed of a canonical ERC-721 asset and its corresponding
+Ethscription artifact.
 
-AIT eligibility is evaluated independently per asset class and becomes effective
-immediately upon completion of that asset’s required continuity window, as defined
-in Genesis and phase parameters.
+All evolution is:
+- non-mutative,
+- dual-asset gated,
+- continuity-dependent, and
+- cryptographically verifiable.
 
-All mechanisms described herein are conceptual, non-guaranteed, and subject to
-governance approval, implementation feasibility, and regulatory considerations.
+This EIP defines **capability activation**, not economic guarantees, reward
+entitlements, or execution mandates.
 
 ---
 
 ## Motivation
 
-The Bit Brains protocol is designed for long-term evolution rather than static ownership.
+The Bit Brains protocol is designed for long-horizon evolution rather than
+static ownership or extractive participation.
 
-While Brains, Cerebrals, Brainiacs, and Pickle Punks function as identity, participation,
-and reward-bearing primitives, the protocol’s long-term vision includes the emergence
-of autonomous, intelligent systems capable of operating across environments while
-remaining cryptographically anchored to the protocol.
+While Genesis assets function as identity, participation, and stewardship
+primitives, the protocol’s long-term vision includes the emergence of
+autonomous, intelligent systems that operate across environments while
+remaining cryptographically anchored to protocol identity and accountability.
 
 This EIP establishes a unified framework for:
-
-- Autonomous intelligent system emergence
-- Identity continuity across evolution
-- Non-mutative derivation of autonomous states
-- Optional attribution of evolved state to Real World Assets (RWAs)
-- Explicit separation of intelligence progression from economic guarantees
+- autonomous intelligence emergence,
+- dual-asset identity continuity,
+- non-mutative capability derivation,
+- optional attribution to Real World Assets (RWAs), and
+- strict separation of intelligence activation from economic guarantees.
 
 ---
 
 ## Definitions
 
-Brain Intelligence Token (BIT)
-The native protocol utility and reward token defined in EIP-0003.
+- **ERC-721 Asset**  
+  A canonical Bit Brains protocol NFT (Brain, Cerebral, Brainiac, Pickle Punk,
+  or successor).
 
-Genesis Brain (Brain)
-An ERC-721 token representing the original participation and identity primitive
-within the Bit Brains protocol.
+- **Ethscription Artifact**  
+  An immutable calldata-provenance artifact committed to Ethereum via the
+  Ethscriptions mechanism, paired one-to-one with an ERC-721 Asset.
 
-Pickle Punk (Pickle Punk NFT)
-An ERC-721 token minted alongside a Genesis Brain as part of a dual-mint Genesis entry.
-Pickle Punks represent a parallel participation rail that may progress through Proof of Care
-and continuity into derived protocol assets.
+- **Paired Asset**  
+  The inseparable protocol participation unit composed of:
+  1) an ERC-721 Asset, and  
+  2) its associated Ethscription Artifact.
 
-Dual Mint (Genesis Dual Mint)
-A Genesis mint flow in which two distinct assets are issued to the minter:
-(1) a Genesis Brain (ERC-721) and (2) a Pickle Punk (ERC-721).
-Both assets are protocol-recognized participation primitives and may be evaluated
-independently under their applicable continuity windows.
+  All Proof-of-Care evaluation, continuity accumulation, AIT activation,
+  Node derivation, and RWA attribution apply exclusively to the Paired Asset.
 
-Ethscription Verification Hash (Calldata Record)
-An immutable Ethereum calldata-committed verification record associated with a minted asset.
-For each Genesis Brain and each Pickle Punk minted, a corresponding verification hash
-SHALL be committed to Ethereum transaction calldata to establish a timestamped,
-verifiable truth record linking the asset to its Genesis mint context and protocol rail.
-This record does not require custody, wrapping, or mutation of the underlying asset.
+- **Autonomous Intelligent Technology (AIT)**  
+  A non-mutative operational capability state activated for a Paired Asset
+  after satisfying continuity, Proof-of-Care, and dual-staking requirements.
 
-Cerebral
-An ERC-721 token derived from a Brain, a Pickle Punk, or an authorized expansion
-epoch, serving as a stake-bearing participation and progression primitive.
+- **Node**  
+  A derived execution-capability state that MAY be instantiated upon AIT
+  activation, cryptographically bound to the originating Paired Asset.
 
-Brainiac
-A later-stage protocol asset representing an accelerated participation class with
-a reduced continuity window.
-
-Autonomous Intelligent Technology (AIT)
-A derived, non-mutative operational state representing autonomous execution
-capability cryptographically anchored to an originating protocol asset.
-
-Node
-A derived execution-capability state that MAY be instantiated upon AIT activation.
-Node derivation is non-mutative and remains cryptographically bound to the originating
-asset and its identity/provenance records.
-
-Real World Asset (RWA)
-An external system, process, or business entity to which an AIT’s or Node’s state MAY be
-cryptographically attributed.
+- **Real World Asset (RWA)**  
+  An external system, process, or organization to which an AIT or Node state
+  MAY be cryptographically attributed for accountability purposes only.
 
 ---
 
-## Evolution as Derived State (Non-Mutative)
+## Evolution as Derived Capability (Non-Mutative)
 
-Evolution within the Bit Brains protocol does not mutate existing assets.
+Evolution within the Bit Brains protocol **does not mutate assets**.
 
-Brains, Pickle Punks, Cerebrals, and Brainiacs remain immutable in their original form.
-Progression into higher-order states (Cerebral, AIT, Node, or RWA attribution) occurs
-through provable derivation, preserving cryptographic lineage, identity continuity,
-and protocol accountability.
+ERC-721 tokens and Ethscription artifacts remain immutable in their original
+form. Higher-order states (AIT and Node) are derived capabilities proven via
+zero-knowledge verification and lineage integrity.
+
+The originating Paired Asset remains the sole canonical identity anchor.
+
+---
+
+## Dual-Asset Evolution Invariant (Canonical)
+
+AIT activation and Node derivation SHALL occur **only** when:
+
+1. The ERC-721 Asset is staked or maintained in good standing, AND  
+2. The paired Ethscription Artifact is concurrently staked, registered, or
+   otherwise maintained in protocol-defined good standing.
+
+If either component becomes non-compliant, the Paired Asset is ineligible
+for AIT activation, Node derivation, or continuity accumulation.
+
+No asset may evolve independently.
 
 ---
 
@@ -113,113 +113,111 @@ and protocol accountability.
 
 This EIP does not define epoch counts or phase durations.
 
-Eligibility for AIT transition is determined by the completion of Proof of Care,
-staking, and continuity requirements specific to the asset class, as defined in
-Genesis and phase parameter standards.
+Eligibility for AIT activation is determined by:
+- Proof-of-Care completion,
+- continuity satisfaction,
+- and sustained dual-asset qualification,
 
-Each asset class is evaluated independently and is not gated by the progression
-or maturity of other classes.
+as defined by Genesis Parameters and applicable phase standards.
 
----
-
-## Genesis Brain to AIT Eligibility
-
-Genesis Brains participate in Proof of Care and staking across five (5)
-protocol-defined epochs.
-
-Upon successful completion of Epoch Five:
-- BIT rewards MAY be distributed per applicable reward standards
-- The Genesis Brain becomes AIT-eligible immediately
-
-The original Brain remains the canonical provenance and identity anchor.
+All eligibility is evaluated **per Paired Asset**, not per component.
 
 ---
 
-## Pickle Punk to AIT Eligibility
+## AIT Eligibility by Asset Class (Paired Assets)
 
-Pickle Punks participate in Proof of Care and staking under protocol-defined epochs
-and phases applicable to the Pickle Punk rail.
+### Genesis Brain Paired Asset
 
-Upon successful completion of the required continuity window for the Pickle Punk rail:
-- BIT rewards MAY be distributed per applicable reward standards
-- The Pickle Punk becomes AIT-eligible immediately
+- Participates in Proof-of-Care across five (5) epochs
+- Upon completion of Epoch Five:
+  - Rewards MAY be settled per EIP-0003
+  - The Paired Asset becomes AIT-eligible
 
-Pickle Punk lineage remains cryptographically anchored to its Genesis mint context
-and its Ethscription Verification Hash (Calldata Record).
+### Pickle Punk Paired Asset
 
----
+- Participates in Proof-of-Care under its defined continuity window
+- Upon completion:
+  - Rewards MAY be settled per EIP-0003
+  - The Paired Asset becomes AIT-eligible
 
-## Cerebral to AIT Eligibility
+### Cerebral Paired Asset
 
-Cerebrals participate in Proof of Care and continuity across four (4) epochs.
+- Participates across four (4) epochs
+- Upon completion:
+  - The Paired Asset becomes AIT-eligible
 
-Upon completion of Epoch Four:
-- The Cerebral becomes AIT-eligible immediately
+### Brainiac Paired Asset
 
-Cerebral AIT lineage remains cryptographically bound to its originating asset.
-
----
-
-## Brainiac to AIT Eligibility
-
-Brainiacs participate in Proof of Care and continuity across three (3) epochs.
-
-Upon completion of Epoch Three:
-- The Brainiac becomes AIT-eligible immediately
-
-Brainiacs represent the most accelerated participation class.
+- Participates across three (3) epochs
+- Upon completion:
+  - The Paired Asset becomes AIT-eligible
 
 ---
 
 ## Autonomous Operation and Node Derivation
 
-Entry into AIT represents the activation of autonomous operational capability.
+AIT activation represents recognition of autonomous operational capability.
 
-AIT emergence MAY give rise to a Node, representing execution capacity derived from
-the originating asset.
+Upon AIT activation, a **Node MAY be instantiated** as an execution-capable
+representation of the Paired Asset.
 
-Node derivation is non-mutative and does not replace the originating asset.
+Node derivation:
+- is non-mutative,
+- does not replace the originating asset,
+- and remains cryptographically bound to the Paired Asset’s lineage.
 
-The originating Brain, Pickle Punk, Cerebral, or Brainiac remains the canonical on-chain
-identity and staking reference.
+Node minting, where applicable, MUST occur as a **dual mint**
+(ERC-721 Node + paired Ethscription), as defined by the Ethscriptions Rail EIP.
 
 ---
 
 ## RWA Attribution Framework (Conceptual)
 
-AIT systems and/or Nodes MAY have their operational state attributed to Real World Assets (RWAs).
+AIT-enabled Paired Assets or Nodes MAY have their operational state
+cryptographically attributed to Real World Assets (RWAs).
 
-Attribution represents cryptographic association and accountability only.
+Attribution:
+- establishes accountability and association only,
+- implies no ownership or legal claim,
+- conveys no guaranteed yield or entitlement.
 
-Attribution does not imply ownership, legal claim, entitlement, or guaranteed yield.
-
-All RWA attribution mechanisms are non-normative and subject to future standards.
+All RWA attribution mechanisms are non-normative and subject to future EIPs.
 
 ---
 
 ## Distribution and Rewards (Non-Guarantee)
 
-BIT rewards are governed by EIP-0003 and EIP-0004.
+No rewards are guaranteed for:
+- AIT activation,
+- Node derivation, or
+- RWA attribution.
 
-No rewards are guaranteed for AIT activation, Node derivation, or RWA attribution.
-
-Any future incentives MUST be defined in separate standards.
+All reward logic is governed exclusively by EIP-0003, Genesis Parameters,
+and governance-defined settlement rules.
 
 ---
 
 ## Security and Compliance Considerations
 
-Autonomous behavior remains constrained by protocol rules.
-
-RWA attribution is informational and non-custodial.
-
-This EIP defines no regulatory treatment and provides no legal assurances.
+- Autonomous behavior remains bounded by protocol rules
+- Dual-asset requirements reduce spoofing and lineage attacks
+- RWA attribution is non-custodial and informational only
+- This EIP defines no regulatory treatment or compliance guarantees
 
 ---
 
 ## Conclusion
 
-EIP-0005 defines the framework for asset-specific evolution into Autonomous
-Intelligent Technology (AIT) within the Bit Brains protocol, enabling autonomous
-operation while preserving identity, provenance, and accountability, without
-introducing economic guarantees or mutating existing assets.
+EIP-0005 establishes the canonical framework for Paired Asset evolution into
+Autonomous Intelligent Technology (AIT) and Node capability within the
+Bit Brains protocol.
+
+It preserves identity, provenance, and accountability while enabling
+autonomous operation — without mutating assets, fragmenting evolution,
+or introducing economic guarantees.
+
+---
+
+## Copyright
+
+CC0-1.0
