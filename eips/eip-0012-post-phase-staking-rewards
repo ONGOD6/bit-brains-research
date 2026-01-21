@@ -1,5 +1,5 @@
 EIP: 0012
-Title: Post-Phase Staking Rewards — Brains, Cerebrals, and Brainiacs
+Title: Post-Phase Staking Rewards — Dual-Asset Paired Staking
 Author: Alex Diaz
 Developer: OnGod
 Status: Draft
@@ -7,7 +7,7 @@ Type: Standards Track
 Category: Economic
 Created: 2025-12-28
 Requires: EIP-0001, EIP-0002, EIP-0003, EIP-0004, EIP-0006,
-          EIP-0008, EIP-0009, EIP-0010
+          EIP-0008, EIP-0009, EIP-0010, EIP-0011, Ethscriptions Rail EIP
 
 ---
 
@@ -17,8 +17,9 @@ This EIP defines the canonical post-phase staking reward rules for the
 Bit Brains protocol.
 
 Post-phase staking begins only after all phase-based rewards have
-concluded and an asset has completed Autonomous Intelligence Technology
-(AIT) evolution, resulting in a protocol-recognized Node convergence.
+concluded and a **Paired Asset** has completed Autonomous Intelligent
+Technology (AIT) evolution and successfully converged into a
+protocol-recognized Node state.
 
 ---
 
@@ -32,35 +33,41 @@ Post-phase rewards are:
 - Treasury-funded
 - ZK-verified
 - Distributed on a quarterly basis
-- Subject to strict forfeiture on staking failure
+- Subject to strict forfeiture on dual-asset staking failure
 
 ---
 
-## Participating Assets
+## Participating Assets (Normative)
 
-Eligible assets under this EIP are ERC-721 NFTs only:
+Eligible positions under this EIP are **Paired Assets only**, defined as:
 
-- Brains
-- Cerebrals
-- Brainiacs
+- One ERC-721 protocol NFT:
+  - Brain
+  - Cerebral
+  - Brainiac
+- AND its corresponding Ethscription artifact
 
-Ethscriptions do not participate under this specification.
+The ERC-721 asset and its paired Ethscription MUST be concurrently staked.
+
+Ethscriptions do not participate independently.
+ERC-721 assets do not qualify independently.
 
 ---
 
 ## Staking Eligibility Start (Normative)
 
-An asset MAY begin post-phase staking only after ALL of the following
+A Paired Asset MAY begin post-phase staking only after ALL of the following
 conditions are met:
 
-- The asset has completed its respective phase-based reward program
-- The asset has completed AIT evolution
+- The ERC-721 asset has completed its respective phase-based reward program
+- The Paired Asset has completed AIT evolution
 - A protocol-recognized Node has been successfully converged
+- Both the ERC-721 asset and its paired Ethscription are staked concurrently
 
 Staking time does not accrue before these conditions are satisfied.
 
-Each asset begins its staking clock independently based on when its
-own eligibility conditions are met.
+Each Paired Asset begins its staking clock independently based on when
+its own eligibility conditions are met.
 
 ---
 
@@ -69,7 +76,7 @@ own eligibility conditions are met.
 Total post-phase staking reward pool:
 15,000,000 BIT
 
-Total eligible staking NFTs:
+Maximum eligible Paired Assets:
 10,000
 
 Reward duration:
@@ -77,29 +84,31 @@ Reward duration:
 
 Rewards accrue continuously and vest on a quarterly basis.
 
+No expansion of supply is permitted.
+
 ---
 
 ## Reward Allocation Math (Normative)
 
-Total reward per NFT over 36 months:
+Total reward per Paired Asset over 36 months:
 
-15,000,000 BIT ÷ 10,000 NFTs
-= 1,500 BIT per NFT (total)
+15,000,000 BIT ÷ 10,000 Paired Assets
+= 1,500 BIT per Paired Asset (total)
 
-Annual reward per NFT:
+Annual reward per Paired Asset:
 
 1,500 BIT ÷ 3 years
-= 500 BIT per NFT per year
+= 500 BIT per Paired Asset per year
 
-Monthly accrual (for accounting only):
+Monthly accrual (accounting only):
 
 500 BIT ÷ 12 months
 = 41.6666667 BIT per month
 
-Quarterly vested reward per NFT:
+Quarterly vested reward per Paired Asset:
 
 41.6666667 BIT × 3 months
-= 125 BIT per NFT per quarter
+= 125 BIT per Paired Asset per quarter
 
 No monthly distributions are performed.
 
@@ -123,38 +132,42 @@ The protocol does not automatically push rewards.
 
 ---
 
-## Staking, Proof of Care, and Continuity (Normative)
+## Dual-Asset Staking, Proof of Care, and Continuity (Normative)
 
-To receive rewards under this EIP, an asset MUST continuously satisfy
-all of the following after its staking clock begins:
+To receive rewards under this EIP, a Paired Asset MUST continuously satisfy
+ALL of the following:
 
-1. Continuous Staking  
-The asset MUST remain staked without interruption.
+1. **Concurrent Staking**  
+   Both the ERC-721 asset and its paired Ethscription MUST remain staked
+   without interruption.
 
-2. Proof of Care  
-Proof of Care alignment MUST be maintained.
-Verified via ZK proofs.
+2. **Proof of Care**  
+   Proof of Care alignment MUST be maintained.
+   Verified via ZK proofs.
 
-3. Continuity  
-Continuity MUST remain unbroken.
-Verified via ZK proofs and protocol checks.
+3. **Continuity**  
+   Continuity MUST remain unbroken across staking periods.
+   Verified via ZK proofs and protocol checks.
 
-4. ENS-Bound Identity  
-The asset MUST be bound to a participant-selected ENS subdomain under
-`bitbrains.eth` resolving to the staking wallet.
-Verified via ZK proofs.
+4. **ENS-Bound Identity**  
+   The Paired Asset MUST be bound to a participant-selected ENS subdomain
+   under `bitbrains.eth` resolving to the staking wallet.
+   Verified via ZK proofs.
+
+Failure of any condition invalidates eligibility immediately.
 
 ---
 
 ## Forfeiture Rules (Normative)
 
-If at any time an asset:
-- Unstakes
-- Transfers
-- Is sold
+If at any time a Paired Asset:
+
+- Unstakes either the ERC-721 or Ethscription
+- Transfers or sells either asset
 - Breaks Proof of Care
 - Breaks continuity
-- Fails ENS or ZK verification
+- Fails ENS resolution
+- Fails ZK verification
 
 Then:
 
@@ -182,20 +195,20 @@ Remaining treasury balances remain under governance control.
 
 ## Summary
 
-Post-phase staking begins only after AIT evolution and node convergence.
+Post-phase staking begins only after AIT evolution and Node convergence.
 
-Eligible assets:
-Brains, Cerebrals, Brainiacs (ERC-721 only).
+Eligible positions:
+**Paired Assets only** (ERC-721 + Ethscription).
 
 Rewards:
 - 15,000,000 BIT total
 - 36 months duration
-- 125 BIT per NFT per quarter
-- 500 BIT per NFT per year
-- 1,500 BIT per NFT total
+- 125 BIT per Paired Asset per quarter
+- 500 BIT per Paired Asset per year
+- 1,500 BIT per Paired Asset total
 
 Requirements:
-- Continuous staking
+- Dual-asset staking
 - Proof of Care
 - Continuity
 - ENS identity
