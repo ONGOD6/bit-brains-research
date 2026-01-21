@@ -14,7 +14,7 @@ Genesis defines **what exists at inception**, not how all future behavior unfold
 
 At Genesis, the protocol introduces:
 - Two primary ERC-721 NFT collections
-- A secondary Ethscription artifact layer
+- A paired Ethscription artifact layer
 - ENS-based identity
 - Proof-of-Care–based participation
 - BIT reward accrual mechanisms
@@ -41,29 +41,30 @@ Team and treasury allocations are reserved for protocol operations, treasury man
 
 ## Genesis NFT Utility
 
-Genesis ERC-721 NFTs (Brains and Pickle Punks) function as participation primitives within the protocol and enable:
+Genesis ERC-721 NFTs (Brains and Pickle Punks) function as **identity and participation primitives** within the protocol and enable:
 
+- ENS-based identity anchoring
 - Eligibility for Proof-of-Care epochs
-- Eligibility for BIT reward accrual
+- Eligibility for BIT reward accrual (subject to staking conditions)
 - Eligibility for future evolutionary pathways
-- Identity anchoring and reputation continuity
+- Reputation continuity and long-term alignment tracking
 
 Both collections participate equally at the protocol layer unless explicitly differentiated by governance or future EIPs.
 
 ---
 
-## Secondary Ethscription Artifacts
+## Paired Ethscription Artifacts (Genesis)
 
-In addition to ERC-721 NFTs, the protocol supports **Ethscription-based artifacts** as a secondary, immutable layer.
+Each Genesis ERC-721 NFT MAY be paired with a corresponding **Ethscription artifact**, forming a **Paired Asset** as defined in the Ethscriptions Rail EIP.
 
 For both Bit Brains and Pickle Punks:
 - An associated Ethscription artifact may be minted
-- Ethscriptions are Ethereum-native call-data inscriptions
+- Ethscriptions are Ethereum-native calldata inscriptions
 - Ethscriptions are immutable once created
 - Each Ethscription permanently references a specific ERC-721 token ID
 - Ethscriptions possess independent hashes and provenance
 
-Ethscriptions form **separate collections** and do not replace ERC-721 NFTs. They act as immutable historical, artistic, and provenance records linked to Genesis assets.
+Ethscriptions do not replace ERC-721 NFTs. They serve as immutable provenance, continuity, and verification artifacts that participate jointly with ERC-721 assets under protocol-defined rules.
 
 ---
 
@@ -74,9 +75,9 @@ Through the protocol interface:
 2. The protocol enables minting of the associated Ethscription artifact
 3. The user receives two distinct Ethereum-native assets:
    - One ERC-721 NFT
-   - One Ethscription artifact
+   - One paired Ethscription artifact
 
-This process preserves independent ownership records while maintaining cryptographic linkage between assets.
+Ownership records remain independent while cryptographic linkage is preserved.
 
 ---
 
@@ -96,13 +97,24 @@ ENS resolution is required for reward eligibility and protocol participation.
 
 ## Proof-of-Care and Epoch Participation
 
-Genesis NFTs may stake and provide Proof-of-Care across the initial epochs.
+Genesis participation occurs across defined epochs.
 
-### Epochs 1 - 5
+### Epochs 1 – 5
 - Sustained staking and continuity are evaluated
-- Long-term alignment is measured
-- Eligibility for advanced evolutionary pathways is finalized
-- BIT rewards tracking initiates 
+- Proof-of-Care signals are measured
+- Eligibility for advanced evolutionary pathways is established
+- BIT reward tracking initiates
+
+---
+
+## Dual-Asset Staking at Genesis
+
+During Genesis epochs:
+
+- ERC-721 NFTs MAY be staked independently for **identity anchoring and continuity signaling**
+- **Full reward eligibility and future evolution eligibility require concurrent staking of the paired Ethscription artifact**, once the Ethscriptions Rail becomes Qualifying under the applicable EIP
+
+Genesis staking behavior establishes continuity history but does not bypass dual-asset requirements defined in later evolutionary phases.
 
 ---
 
@@ -119,16 +131,16 @@ Instead:
   - Epoch participation
   - Governance-defined parameters
 
-No Genesis reward allocation guarantees permanent or immutable percentages.
+Reward eligibility, rates, and conditions are subject to evolution via EIPs and governance and do not imply guaranteed yields.
 
 ---
 
 ## Staking and Reward Mechanics
 
-- Genesis NFTs must stake and provide Proof-of-Care during Epochs 1–5
-- BIT rewards are minted and distributed after phase completion
+- Genesis ERC-721 NFTs may stake and accrue Proof-of-Care during Epochs 1–5
+- BIT rewards are minted and distributed per protocol rules
 - Rewards are claimable via ENS-resolved identities
-- Reward rates and mechanics may evolve through governance
+- Full evolutionary eligibility requires satisfaction of dual-asset staking conditions as defined in the Ethscriptions Rail EIP
 
 The protocol favors **long-term alignment over short-term extraction**.
 
@@ -140,10 +152,14 @@ Phase 2 introduces **no free assets**.
 
 Instead, Genesis participants may unlock:
 - Continued BIT reward participation
-- Evolution into **Autonomous Intelligence Technology (AIT)**
+- Evolution into **Autonomous Intelligent Technology (AIT)**
 - Node instantiation and binding
 
-All Phase 2 outcomes are gated by Proof-of-Care, continuity, and governance-defined thresholds.
+All Phase 2 outcomes are gated by:
+- Proof-of-Care
+- Continuity
+- Dual-asset staking (ERC-721 + Ethscription)
+- Governance-defined thresholds
 
 ---
 
@@ -159,8 +175,8 @@ All Phase 2 outcomes are gated by Proof-of-Care, continuity, and governance-defi
 
 Genesis establishes the foundation for identity, participation, and alignment within the Bit Brains protocol.
 
-ERC-721 NFTs provide flexibility and market participation.  
-Ethscriptions provide permanence and provenance.  
-Proof-of-Care governs all progression.
+ERC-721 NFTs provide programmability and market flexibility.  
+Ethscriptions provide immutable provenance and verification.  
+Proof-of-Care and dual-asset staking govern all higher-order evolution.
 
 Genesis defines the starting state — not the endpoint.
