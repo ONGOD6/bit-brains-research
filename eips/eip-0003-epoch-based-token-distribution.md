@@ -6,7 +6,7 @@ Status: Draft
 Type: Standards Track
 Category: Economic
 Created: 2025-12-28
-Requires: EIP-0001, Genesis Parameters
+Requires: EIP-0001, Genesis Parameters, Ethscriptions Rail EIP
 
 ---
 
@@ -16,7 +16,7 @@ EIP-0003 defines the fixed maximum token supply and the constraints under which 
 
 This EIP establishes a hard-capped total supply, prohibits inflationary minting, and constrains all token distribution to governance-defined phases and eligibility rules.
 
-This specification does not guarantee emission schedules, reward amounts, or distribution timing. All emissions, if any, remain subject to Proof-of-Care, continuity, and governance-defined settlement conditions.
+This specification does not guarantee emission schedules, reward amounts, or distribution timing. All emissions, if any, remain subject to Proof-of-Care, continuity, dual-asset staking requirements, and governance-defined settlement conditions.
 
 This revision additionally defines:
 - a revised Year-1 Genesis Brain staking emission schedule (20M / 15M / 10M; 45M total)
@@ -48,6 +48,47 @@ Nothing in this EIP guarantees rewards, fixed schedules, or emission certainty.
 
 ---
 
+## Definitions
+
+- **ERC-721 Asset**
+  A canonical Bit Brains protocol NFT (Brain, Cerebral, Brainiac, Pickle Punk, or successor).
+
+- **Ethscription Artifact**
+  A calldata-provenance artifact committed to Ethereum via the Ethscriptions mechanism, serving as immutable provenance and protocol verification record.
+
+- **Paired Asset**
+  The canonical protocol participation unit composed of:
+  1) an ERC-721 Asset, and
+  2) its associated Ethscription Artifact.
+
+  Eligibility, continuity, and staking references in this EIP apply to the Paired Asset unless explicitly stated otherwise.
+
+- **Qualifying Position**
+  A position recognized by the protocol as eligible for continuity/Proof-of-Care evaluation under applicable EIPs. A position is Qualifying only when the Paired Asset satisfies dual-asset staking or good-standing requirements defined in Genesis Parameters and related EIPs.
+
+---
+
+## Dual-Asset Eligibility Alignment (Non-Economic)
+
+This EIP defines supply and emission constraints only.
+
+However, any reference to:
+- staking emissions,
+- reward eligibility,
+- maturity windows,
+- continuity requirements, or
+- “good standing”
+
+SHALL be interpreted in alignment with the **Dual-Asset Evolution Invariant** defined by the Ethscriptions Rail EIP.
+
+Accordingly:
+- emissions MAY be authorized only for **Qualifying Positions**, and
+- a Qualifying Position exists only when the **Paired Asset** remains concurrently staked or maintained in good standing under protocol rules.
+
+This section introduces no guarantees and does not modify the hard cap.
+
+---
+
 ## Total Supply (Invariant)
 
 Maximum Supply: 200,000,000 tokens  
@@ -62,7 +103,7 @@ This maximum supply is absolute and SHALL NOT be exceeded.
 
 - Token emissions, if any, MUST occur within governance-defined phases and budgets.
 - Emissions MUST remain bounded within the hard cap.
-- Emissions MAY be constrained by epoch completion, Proof-of-Care, and continuity rules.
+- Emissions MAY be constrained by epoch completion, Proof-of-Care, continuity rules, and dual-asset eligibility requirements.
 - Emissions MAY be delayed, reduced, or halted entirely.
 
 This EIP defines constraints, not guaranteed schedules.
@@ -108,13 +149,17 @@ No internal allocation implies entitlement.
 
 Total Year-1 staking emissions: 45,000,000 tokens.
 
+Authorization and distribution remain non-guaranteed and require Qualifying Positions under applicable EIPs.
+
 ---
 
 ## Liquidity Preference Constraint (Mint-Time 12-Month Rule)
 
 ### Definition
 
-The 12-month maturity window begins at the mint timestamp of the staking position or associated reward-mint epoch.
+The 12-month maturity window begins at the mint timestamp of the applicable **staking position or reward-mint event**, as defined by governance and the claim/withdrawal layer.
+
+For avoidance of doubt: where protocol participation is evaluated as a Paired Asset, the maturity window applies to the Qualifying Position derived from the Paired Asset.
 
 ### Rule
 
@@ -150,10 +195,10 @@ If **no participants qualify** by restaking rewards for a phase, that phase’s 
 
 A participant is eligible for the continuity bonus pool if ALL are true:
 
-1. The participant earned rewards in the applicable phase.
-2. The participant maintained continuous staking through the 12-month mint maturity window.
+1. The participant earned rewards in the applicable phase from a **Qualifying Position**.
+2. The participant maintained continuous qualification through the 12-month mint maturity window.
 3. The participant **continues staking their earned rewards** at the time of bonus settlement.
-4. The participant remains in good standing under Proof-of-Care rules.
+4. The participant remains in good standing under Proof-of-Care rules and applicable dual-asset eligibility rules.
 
 ---
 
