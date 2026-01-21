@@ -7,21 +7,24 @@ Status: Draft
 Type: Standards Track
 Category: Core
 Created: 2025-12-27
-Requires: EIP-0001, EIP-0002, EIP-0004, EIP-0005, EIP-0006
+Requires: EIP-0001, EIP-0002, EIP-0004, EIP-0005, EIP-0006, Ethscriptions Rail EIP
 
 ---
 
 ## Abstract
 
 This EIP defines the standard by which protocol assets within the Bit Brains ecosystem
-are recognized as operating in an Autonomous Intelligent Technology (AIT) state.
+are recognized as operating in an **Autonomous Intelligent Technology (AIT)** state.
 
-AIT is not a new token type, contract, or asset. It is a derived operational state
-achieved through sustained Proof of Care (PoC), continuity, ENS identity resolution,
-and zero-knowledge verification, as defined in prior standards.
+AIT is not a new token type, contract, or asset. It is a **derived operational state**
+recognized at the **Paired Asset level**, composed of a canonical ERC-721 asset and its
+corresponding Ethscription artifact.
 
-This EIP specifies how AIT state is attested, activated, validated, and constrained
-without mutating the originating asset or altering protocol economics.
+AIT state is achieved through sustained Proof of Care (PoC), continuity, ENS identity
+resolution, and zero-knowledge verification, as defined in prior standards.
+
+This EIP specifies how AIT state is attested, activated, validated, suspended, and
+constrained without mutating the originating assets or altering protocol economics.
 
 ---
 
@@ -33,7 +36,7 @@ As intelligent systems become autonomous, clear boundaries are required to disti
 - Ownership from execution
 - Eligibility from authority
 
-Without explicit standards, autonomous behavior risks overreach, ambiguity, or
+Without explicit standards, autonomous behavior risks ambiguity, overreach, or
 protocol capture.
 
 This EIP ensures that AIT activation is:
@@ -47,23 +50,28 @@ This EIP ensures that AIT activation is:
 
 ## Definitions
 
-Autonomous Intelligent Technology (AIT)  
-A derived operational state in which a Brain or Cerebral is authorized to perform
+**Autonomous Intelligent Technology (AIT)**  
+A derived operational capability state in which a Paired Asset is authorized to perform
 bounded autonomous actions under protocol-defined constraints.
 
-AIT State Attestation  
-A cryptographic assertion proving that an asset satisfies all requirements to operate
-in AIT state.
+**Paired Asset**  
+The inseparable protocol participation unit composed of:
+1) a canonical ERC-721 asset (Brain, Cerebral, Brainiac, Pickle Punk, or successor), and  
+2) its associated Ethscription artifact.
 
-Origin Asset  
-The Brain or Cerebral NFT from which the AIT state is derived.
+All AIT recognition and enforcement apply exclusively to the Paired Asset.
 
-ENS Canonical Identity  
-The ENS subdomain resolved and verified during Proof of Care and continuity evaluation.
+**AIT State Attestation**  
+A cryptographic assertion proving that a Paired Asset satisfies all requirements to
+operate in AIT state.
 
-ZK Eligibility Proof  
-A zero-knowledge proof attesting that continuity, PoC, and eligibility thresholds
-have been met without revealing private data.
+**Canonical ENS Identity**  
+The ENS subdomain resolved and verified during Proof of Care and continuity evaluation,
+serving as the attribution anchor for AIT actions.
+
+**ZK Eligibility Proof**  
+A zero-knowledge proof attesting that continuity, Proof of Care, and dual-asset
+qualification thresholds have been met without revealing private data.
 
 ---
 
@@ -72,25 +80,27 @@ have been met without revealing private data.
 AIT activation does not:
 
 - Mint a new token
-- Burn or replace the origin asset
+- Burn or replace any asset
 - Modify immutable metadata
 - Change ownership semantics
 
-The origin Brain or Cerebral remains unchanged.
+Both the ERC-721 asset and the Ethscription artifact remain unchanged.
 
-AIT exists as a recognized execution state, not a new asset.
+AIT exists solely as a **recognized execution state** applied to the Paired Asset.
 
 ---
 
-## AIT Eligibility Requirements
+## AIT Eligibility Requirements (Canonical)
 
-An origin asset MAY be recognized as operating in AIT state if and only if:
+A Paired Asset MAY be recognized as operating in AIT state if and only if ALL of the
+following are satisfied:
 
 1. All required Proof of Care and continuity windows are satisfied
-2. ENS identity is resolved and verified
-3. Zero-knowledge eligibility proofs are successfully validated
-4. No active suspension or revocation is in effect
-5. All execution constraints defined in EIP-0006 are satisfied
+2. The ERC-721 asset remains in good standing under protocol staking rules
+3. The paired Ethscription artifact remains concurrently valid and in good standing
+4. Canonical ENS identity is resolved and verified
+5. Zero-knowledge eligibility proofs are successfully validated
+6. No active suspension or revocation is in effect
 
 Failure of any requirement invalidates AIT state.
 
@@ -100,17 +110,19 @@ Failure of any requirement invalidates AIT state.
 
 AIT state MUST be established via a verifiable attestation that includes:
 
-- Origin asset identifier
-- Origin asset type (Brain or Cerebral)
+- Paired Asset identifier(s)
+- ERC-721 asset class
 - Canonical ENS identity
 - Eligibility window reference
-- ZK proof reference or hash
+- Zero-knowledge proof reference or hash
 - Timestamp of activation
 
 Attestations MAY be stored:
 - On-chain
 - Off-chain with on-chain anchoring
 - In protocol-defined registries
+
+Attestation storage does not imply permanence of AIT state.
 
 ---
 
@@ -119,25 +131,27 @@ Attestations MAY be stored:
 ### Activation
 
 - AIT activation is explicit and attestable
-- Activation does not imply permanence
-- Activation does not imply reward guarantees
+- Activation is non-permanent and conditional
+- Activation does not imply reward guarantees, governance power, or custody
 
 ### Suspension
 
 AIT state MAY be suspended or invalidated due to:
+
 - Continuity failure
-- Constraint violation
+- Dual-asset qualification failure
+- Execution constraint violation
 - Governance decision
 - Security risk
 - Regulatory exposure
 
-Suspension does not destroy the origin asset.
+Suspension does not destroy or alter the Paired Asset.
 
 ---
 
 ## Permitted AIT Capabilities (High-Level)
 
-Subject to EIP-0006 constraints, an AIT MAY:
+Subject to protocol constraints and governance-defined rules, an AIT MAY:
 
 - Generate signed assertions
 - Perform off-chain computation
@@ -157,30 +171,46 @@ AITs do not gain economic, custodial, or governance authority by default.
 
 ---
 
+## Relationship to Node Derivation
+
+AIT recognition alone does not instantiate a Node.
+
+Node creation, where applicable, is defined in EIP-0005 and related standards and
+requires additional eligibility checks, dual-asset continuity, and explicit
+recognition events.
+
+---
+
 ## Backward Compatibility
 
 This EIP is fully additive.
 
-Assets not operating in AIT state remain unaffected.
-Existing ERC compatibility is preserved.
+Paired Assets not operating in AIT state remain unaffected.
+Existing ERC-721 compatibility and ownership semantics are preserved.
 
 ---
 
 ## Security Considerations
 
 - Non-mutative state prevents asset corruption
-- Attestation-based activation prevents spoofing
-- ENS binding prevents impersonation
-- ZK proofs preserve privacy while enforcing integrity
+- Dual-asset qualification prevents spoofing
+- Attestation-based activation prevents impersonation
+- ENS binding enforces accountability
+- Zero-knowledge proofs preserve privacy while enforcing integrity
 
 ---
 
 ## Conclusion
 
 EIP-0007 formalizes Autonomous Intelligent Technology (AIT) state as a bounded,
-attestable, non-mutative execution condition rather than a new asset or economic
-class.
+attestable, non-mutative execution condition recognized at the Paired Asset level.
 
 By separating autonomy from ownership and execution from entitlement, the Bit Brains
 protocol enables intelligent evolution without compromising safety, stewardship,
 or protocol integrity.
+
+---
+
+## Copyright
+
+CC0-1.0
