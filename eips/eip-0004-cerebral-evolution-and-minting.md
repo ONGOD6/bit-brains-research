@@ -6,7 +6,7 @@ Status: Draft
 Type: Standards Track  
 Category: Core  
 Created: 2025-12-22  
-Requires: EIP-0001, EIP-0003  
+Requires: EIP-0001, EIP-0003, Genesis Parameters, Ethscriptions Rail EIP  
 
 ---
 
@@ -15,150 +15,152 @@ Requires: EIP-0001, EIP-0003
 This EIP defines the Genesis participation assets of the  
 Bit Brains protocol.
 
-Genesis participation is established exclusively through  
-ERC-721 NFTs.
+Genesis participation is established through **ERC-721 NFTs**,  
+each minted with an associated **secondary Ethscription artifact**  
+that serves as immutable calldata provenance.
 
-These assets form the foundational layer for identity,  
-staking eligibility, Proof-of-Care alignment, and  
-continuity participation.
+Together, the ERC-721 asset and its paired Ethscription form a  
+single protocol-recognized **Paired Asset**, which acts as the  
+canonical unit of identity, eligibility, and long-term evolution.
 
-This proposal intentionally limits scope to ERC-721  
-Genesis assets and does not introduce alternative  
-participation rails, derivative mechanisms, or active  
-secondary systems.
+This EIP defines **what exists at Genesis**, not how or when  
+future evolution, activation, or staking mechanics occur.
 
 ---
 
 ## Motivation
 
-The Bit Brains protocol is designed around clarity,  
-continuity, and long-term extensibility.
+The Bit Brains protocol is designed around clarity, continuity,  
+and long-term extensibility.
 
-Early-stage protocols often introduce parallel systems  
-too early, increasing complexity and weakening identity  
-guarantees.
+Early-stage protocols often introduce parallel participation  
+systems prematurely, increasing complexity and weakening  
+identity guarantees.
 
-This EIP enforces a strict Genesis boundary by defining  
-exactly which assets exist at inception and how they  
-participate.
+This EIP enforces a strict Genesis boundary by defining:
+- exactly which assets exist at inception, and
+- how those assets are structurally composed on-chain.
 
-Genesis defines **what exists**, not how all future  
-evolution unfolds.
+Genesis defines **existence and identity**, not activation,  
+evolution, or economic behavior.
 
 ---
 
 ## Genesis Asset Set
 
 At Genesis, the Bit Brains protocol recognizes  
-**3,000 total Genesis NFTs**, composed of:
+**3,000 total Genesis ERC-721 NFTs**, composed of:
 
-- **1,500 Genesis Brains (ERC-721)**
-- **1,500 Genesis Pickle Punks (ERC-721)**
+- **1,500 Genesis Brains (ERC-721)**  
+- **1,500 Genesis Pickle Punks (ERC-721)**  
 
-These assets are collectively referred to as  
-**Genesis NFTs**.
+Each Genesis ERC-721 NFT is minted **simultaneously** with a  
+corresponding **Ethscription artifact**.
 
-Genesis NFTs are the **only assets eligible** for protocol  
-participation during the initial phases.
-
----
-
-## Participation Scope
-
-Genesis NFTs enable:
-
-- Protocol identity anchoring  
-- ENS-based identification  
-- Eligibility for staking  
-- Participation in Proof-of-Care  
-- Continuity tracking across phases  
-
-No additional assets, wrappers, inscriptions, or  
-derivative representations participate in Genesis  
-mechanics.
+These paired components collectively form **Genesis Assets**.
 
 ---
 
-## Exclusions and Non-Features
+## Canonical Paired Asset Definition
 
-This EIP explicitly does **not** introduce:
+Each Genesis Asset consists of:
 
-- Alternative minting rails  
-- Secondary participation assets  
-- Node mechanics  
-- Autonomous Intelligent Technology (AIT)  
-- Economic guarantees or reward formulas  
-- Time-based unlocks or emissions schedules  
+1. A canonical **ERC-721 NFT**, and  
+2. A corresponding **Ethscription artifact**, committed as  
+   immutable Ethereum calldata at mint time.
 
-Any such mechanisms, if introduced, must be defined  
-in future EIPs.
+Together, these components form a **Paired Asset**.
+
+The Paired Asset is the **only protocol-recognized identity unit**  
+for participation, continuity tracking, and future evolution.
+
+Neither component is recognized independently.
 
 ---
 
-## Dual Mint Clarification (Future-Scoped)
+## Participation Scope (Genesis Phase)
 
-Each Genesis NFT is minted with a **secondary on-chain  
-artifact** created in parallel.
+During Genesis and initial protocol phases:
 
-This artifact is an **Ethscription**, represented as  
-calldata committed to Ethereum.
+- Only **Paired Assets derived from Genesis ERC-721 NFTs** exist  
+- No alternative assets, wrappers, derivatives, or representations  
+  participate in protocol mechanics
+- Ethscription artifacts are **non-operative** and **non-qualifying**
+  until explicitly activated by later standards
 
-The Ethscription:
+Participation eligibility, staking, Proof-of-Care evaluation, and  
+continuity tracking are defined exclusively by Genesis Parameters  
+and subsequent EIPs.
 
-- Has no active protocol function at Genesis  
-- Does not confer participation rights  
-- Does not affect staking or rewards  
-- Does not operate as a participation rail  
+---
 
-Its sole purpose is to act as a **protocol safeguard  
-and extensibility anchor**, reserved for future system  
-development.
+## Explicit Non-Features
 
-This capability is **explicitly inactive** during  
-Genesis and the initial protocol phases.
+This EIP explicitly does **not** define or activate:
+
+- Independent Ethscription participation rails  
+- Secondary staking systems  
+- Autonomous Intelligent Technology (AIT) mechanics  
+- Node mechanics or execution layers  
+- Reward formulas or emission schedules  
+- Activation criteria for secondary artifacts  
+
+All such mechanisms MUST be defined in future EIPs.
+
+---
+
+## Dual-Mint Invariant (Canonical)
+
+The Bit Brains protocol defines a **dual-mint invariant**  
+for all core asset classes, including:
+
+- Brains  
+- Cerebrals  
+- Brainiacs  
+- Nodes (where applicable)
+
+For each such asset:
+- An **ERC-721 NFT** and
+- A **paired Ethscription artifact**
+
+MUST be minted together as a single, inseparable unit.
+
+This invariant ensures:
+- immutable provenance,
+- long-term extensibility,
+- and non-fragmented asset evolution.
 
 ---
 
 ## Forward Compatibility
 
-At a later stage of protocol development, secondary  
-artifacts may be utilized to support future evolution  
-paths.
+At later stages of protocol development, Paired Assets MAY  
+become eligible for:
 
-These paths may include progression toward  
-Autonomous Intelligent Technology (AIT) or node-based  
-systems.
+- dual-asset staking,
+- Proof-of-Care evaluation,
+- Autonomous Intelligent Technology (AIT) activation, and
+- Node recognition.
 
-No mechanics, guarantees, timelines, or activation  
-criteria are defined in this EIP.
+Such activation:
+- is **explicitly deferred**,
+- requires future EIPs, and
+- MUST enforce concurrent qualification of both paired components.
 
----
-
-## Invariant
-
-The Bit Brains protocol defines a **dual-mint invariant**  
-for its core asset classes:
-
-- Brains  
-- Cerebrals  
-- Brainiacs  
-
-Each ERC-721 asset is minted with a corresponding  
-secondary artifact.
-
-This invariant ensures long-term extensibility without  
-altering current protocol behavior.
+No activation, evolution, or staking behavior is enabled by  
+this EIP.
 
 ---
 
 ## Security Considerations
 
-By limiting Genesis participation to ERC-721 NFTs,  
-the protocol reduces attack surface and preserves  
-clear ownership and identity semantics.
+By defining Genesis participation at the Paired Asset level  
+while keeping secondary artifacts non-operative, the protocol:
 
-Secondary artifacts remain non-operative until  
-explicitly activated by future standards.
+- minimizes attack surface,
+- preserves clear ownership semantics,
+- prevents premature system complexity, and
+- maintains cryptographic extensibility guarantees.
 
 ---
 
