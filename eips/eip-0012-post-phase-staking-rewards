@@ -2,7 +2,7 @@ EIP: 0012
 Title: Post-Phase Staking Rewards — Dual-Asset Paired Staking
 Author: Alex Diaz
 Developer: OnGod
-Status: Draft
+Status: Draft (Architectural Revision — Economics)
 Type: Standards Track
 Category: Economic
 Created: 2025-12-28
@@ -16,23 +16,40 @@ Requires: EIP-0001, EIP-0002, EIP-0003, EIP-0004, EIP-0006,
 This EIP defines the canonical post-phase staking reward rules for the
 Bit Brains protocol.
 
-Post-phase staking begins only after all phase-based rewards have
-concluded and a **Paired Asset** has completed Autonomous Intelligent
-Technology (AIT) evolution and successfully converged into a
-protocol-recognized Node state.
+Post-phase staking begins only after phase-based rewards conclude and a
+**Paired Asset** completes Autonomous Intelligent Technology (AIT)
+evolution and successfully converges into a protocol-recognized Node
+state.
+
+---
+
+## ⚠️ Architectural Update Notice — Economics (Authoritative)
+
+This EIP is under architectural revision for post-phase reward economics.
+
+Any previously listed numeric values (including pool sizes, durations,
+caps, and per-period reward math) are **DEPRECATED** and
+**NON-AUTHORITATIVE**.
+
+No numeric reward value in this EIP should be used for modeling,
+valuation, incentives, or expectations.
+
+This EIP defines **eligibility, constraints, claim mechanics, and
+forfeiture rules**. Economic parameters are intentionally **TBD**.
 
 ---
 
 ## Abstract
 
-This EIP governs additional staking rewards for long-term participants
+This EIP governs post-phase staking rewards for long-term participants
 after Phase One, Phase Two, and Phase Three have concluded.
 
 Post-phase rewards are:
+
 - Non-inflationary
 - Treasury-funded
 - ZK-verified
-- Distributed on a quarterly basis
+- Distributed on a periodic checkpoint basis
 - Subject to strict forfeiture on dual-asset staking failure
 
 ---
@@ -41,10 +58,7 @@ Post-phase rewards are:
 
 Eligible positions under this EIP are **Paired Assets only**, defined as:
 
-- One ERC-721 protocol NFT:
-  - Brain
-  - Cerebral
-  - Brainiac
+- One ERC-721 protocol NFT (Brain, Cerebral, Brainiac, or successor)
 - AND its corresponding Ethscription artifact
 
 The ERC-721 asset and its paired Ethscription MUST be concurrently staked.
@@ -56,10 +70,9 @@ ERC-721 assets do not qualify independently.
 
 ## Staking Eligibility Start (Normative)
 
-A Paired Asset MAY begin post-phase staking only after ALL of the following
-conditions are met:
+A Paired Asset MAY begin post-phase staking only after ALL conditions are met:
 
-- The ERC-721 asset has completed its respective phase-based reward program
+- The ERC-721 asset has completed its phase-based reward program(s)
 - The Paired Asset has completed AIT evolution
 - A protocol-recognized Node has been successfully converged
 - Both the ERC-721 asset and its paired Ethscription are staked concurrently
@@ -67,92 +80,82 @@ conditions are met:
 Staking time does not accrue before these conditions are satisfied.
 
 Each Paired Asset begins its staking clock independently based on when
-its own eligibility conditions are met.
+its eligibility conditions are met.
 
 ---
 
 ## Reward Pool and Duration (Normative)
 
-Total post-phase staking reward pool:
-15,000,000 BIT
+Post-phase staking rewards, if authorized, MUST satisfy all constraints below:
 
-Maximum eligible Paired Assets:
-10,000
+- **Funding Source:** Treasury-funded only
+- **Supply:** Non-inflationary (no new issuance)
+- **Budget:** CAPPED (TO BE DETERMINED)
+- **Eligible Positions:** CAPPED (TO BE DETERMINED)
+- **Reward Duration:** TO BE DETERMINED
+- **Checkpoint Cadence:** Periodic (default intent: quarterly), governance-defined
 
-Reward duration:
-36 months (3 years)
+No parameter in this section implies entitlement.
 
-Rewards accrue continuously and vest on a quarterly basis.
-
-No expansion of supply is permitted.
-
----
-
-## Reward Allocation Math (Normative)
-
-Total reward per Paired Asset over 36 months:
-
-15,000,000 BIT ÷ 10,000 Paired Assets
-= 1,500 BIT per Paired Asset (total)
-
-Annual reward per Paired Asset:
-
-1,500 BIT ÷ 3 years
-= 500 BIT per Paired Asset per year
-
-Monthly accrual (accounting only):
-
-500 BIT ÷ 12 months
-= 41.6666667 BIT per month
-
-Quarterly vested reward per Paired Asset:
-
-41.6666667 BIT × 3 months
-= 125 BIT per Paired Asset per quarter
-
-No monthly distributions are performed.
+Rewards MAY be reduced, delayed, restructured, or set to zero.
 
 ---
 
-## Quarterly Vesting and Claims
+## Accrual and Allocation (Normative)
 
-Rewards vest at the end of each quarter (three-month period).
+Rewards MAY accrue continuously for accounting purposes.
 
-At each quarterly checkpoint:
-- Vested rewards become claimable
-- Unclaimed rewards roll over automatically
+However, claimability MUST be determined only at checkpoint settlement.
+
+Allocation MAY incorporate governance-defined weighting, provided:
+
+- it is deterministic at settlement,
+- it is ZK-verifiable,
+- it is bounded by the treasury cap, and
+- it does not violate any supply constraints in EIP-0003.
+
+This EIP does not require a fixed per-asset reward rate.
+
+---
+
+## Checkpoint Vesting and Claims (Normative)
+
+Rewards vest at the end of each checkpoint period.
+
+At each checkpoint:
+
+- vested rewards become claimable,
+- unclaimed rewards MAY roll over (governance-defined),
+- the protocol MUST NOT automatically push rewards.
 
 Claims are:
-- User-initiated
-- Paid by the user (gas)
-- Routed through ENS
-- Verified using zero-knowledge (ZK) proofs
 
-The protocol does not automatically push rewards.
+- user-initiated,
+- gas-paid by the user,
+- routed through ENS,
+- verified using zero-knowledge (ZK) proofs.
 
 ---
 
 ## Dual-Asset Staking, Proof of Care, and Continuity (Normative)
 
-To receive rewards under this EIP, a Paired Asset MUST continuously satisfy
-ALL of the following:
+To receive rewards under this EIP, a Paired Asset MUST continuously satisfy ALL:
 
 1. **Concurrent Staking**  
    Both the ERC-721 asset and its paired Ethscription MUST remain staked
    without interruption.
 
 2. **Proof of Care**  
-   Proof of Care alignment MUST be maintained.
-   Verified via ZK proofs.
+   Proof-of-Care alignment MUST be maintained. Verified via ZK proofs.
 
 3. **Continuity**  
-   Continuity MUST remain unbroken across staking periods.
-   Verified via ZK proofs and protocol checks.
+   Continuity MUST remain unbroken across staking periods. Verified via ZK
+   proofs and protocol checks.
 
 4. **ENS-Bound Identity**  
    The Paired Asset MUST be bound to a participant-selected ENS subdomain
-   under `bitbrains.eth` resolving to the staking wallet.
-   Verified via ZK proofs.
+   under `bitbrains.eth` resolving to the staking wallet. Verified via ZK
+   proofs.
 
 Failure of any condition invalidates eligibility immediately.
 
@@ -162,32 +165,36 @@ Failure of any condition invalidates eligibility immediately.
 
 If at any time a Paired Asset:
 
-- Unstakes either the ERC-721 or Ethscription
-- Transfers or sells either asset
-- Breaks Proof of Care
-- Breaks continuity
-- Fails ENS resolution
-- Fails ZK verification
+- unstakes either the ERC-721 or Ethscription,
+- transfers or sells either asset (where applicable),
+- breaks Proof of Care,
+- breaks continuity,
+- fails ENS resolution, or
+- fails ZK verification,
 
-Then:
+then:
 
-- All unclaimed post-phase rewards are forfeited
-- The staking clock stops immediately
-- No partial rewards are paid
-- Forfeited rewards return to the Rewards Reserve Treasury
+- all unclaimed post-phase rewards are forfeited,
+- the staking clock stops immediately,
+- no partial checkpoint rewards are paid for the forfeiture window,
+- forfeited rewards return to the Rewards Reserve Treasury.
 
 Forfeiture is immediate and irreversible.
 
 ---
 
-## Treasury and Supply Constraints
+## Treasury and Supply Constraints (Normative)
 
-All rewards are funded from a fixed 15,000,000 BIT treasury allocation.
+All post-phase rewards MUST be funded from a treasury budget.
 
 This EIP does not authorize:
-- Inflation
-- New token issuance
-- Automatic treasury expansion
+
+- inflation,
+- new token issuance, or
+- automatic treasury expansion.
+
+All distributions remain subject to the hard supply cap and emission
+constraints defined in EIP-0003.
 
 Remaining treasury balances remain under governance control.
 
@@ -200,19 +207,13 @@ Post-phase staking begins only after AIT evolution and Node convergence.
 Eligible positions:
 **Paired Assets only** (ERC-721 + Ethscription).
 
-Rewards:
-- 15,000,000 BIT total
-- 36 months duration
-- 125 BIT per Paired Asset per quarter
-- 500 BIT per Paired Asset per year
-- 1,500 BIT per Paired Asset total
+Rewards are:
+- treasury-funded,
+- non-inflationary,
+- checkpoint-based (default intent: quarterly),
+- ZK-verified,
+- ENS-routed,
+- forfeitable on any dual-asset or Proof-of-Care failure.
 
-Requirements:
-- Dual-asset staking
-- Proof of Care
-- Continuity
-- ENS identity
-- ZK verification
-
-Breaking staking forfeits all unclaimed rewards.
-Unused rewards return to the treasury.
+All numeric economics are intentionally **TBD** and must be introduced
+only via governance-ratified amendment or a future EIP.
