@@ -1,219 +1,196 @@
-EIP: 0012
-Title: Post-Phase Staking Rewards — Dual-Asset Paired Staking
-Author: Alex Diaz
-Developer: OnGod
-Status: Draft (Architectural Revision — Economics)
-Type: Standards Track
-Category: Economic
-Created: 2025-12-28
-Requires: EIP-0001, EIP-0002, EIP-0003, EIP-0004, EIP-0006,
-          EIP-0008, EIP-0009, EIP-0010, EIP-0011, Ethscriptions Rail EIP
+# EIP-0012 — Post-Phase Staking Rewards — Genesis Continuity Dividend (Final)
+
+EIP: 0012  
+Title: Post-Phase Staking Rewards — Genesis Continuity Dividend (Dual-Asset Paired Staking)  
+Author: Alex Diaz  
+Developer: OnGod  
+Status: Draft (Finalized Economics + Constitutional Alignment)  
+Type: Standards Track  
+Category: Economic  
+Created: 2025-12-28  
+Requires: EIP-0001, EIP-0002, EIP-0003, EIP-0004, EIP-0006, EIP-0008, EIP-0009, EIP-0010, EIP-0011, EIP-0013-A, EIP-0014  
 
 ---
 
-# Post-Phase Staking Rewards Standard
+# Post-Phase Staking Rewards Standard (Genesis Continuity Dividend)
 
-This EIP defines the canonical post-phase staking reward rules for the
-Bit Brains protocol.
+This EIP defines the canonical Genesis-only post-phase staking reward program for long-term Bit Brains participants after phase-based rewards conclude and a Paired Asset completes Autonomous Intelligent Technology (AIT) evolution and converges into a protocol-recognized Node state.
 
-Post-phase staking begins only after phase-based rewards conclude and a
-**Paired Asset** completes Autonomous Intelligent Technology (AIT)
-evolution and successfully converges into a protocol-recognized Node
-state.
+This program is a capped Genesis continuity dividend funded from a suballocation of the annual BITS emission ceiling. It rewards early adopters who maintain staking, continuity, and Proof of Care without creating competitive redistribution dynamics.
 
 ---
 
-## ⚠️ Architectural Update Notice — Economics (Authoritative)
+## 1. Definitions (Normative)
 
-This EIP is under architectural revision for post-phase reward economics.
+**BITS**  
+Brain Intelligence Technology Services token defined in EIP-0014.
 
-Any previously listed numeric values (including pool sizes, durations,
-caps, and per-period reward math) are **DEPRECATED** and
-**NON-AUTHORITATIVE**.
+**END DAO**  
+Ethereum Node Development DAO governance authority defined in EIP-0013-A.
 
-No numeric reward value in this EIP should be used for modeling,
-valuation, incentives, or expectations.
+**Genesis Set**  
+The fixed first-mint set of 10,000 Genesis artifacts across protocol phases. This set is permanently closed and cannot be expanded.
 
-This EIP defines **eligibility, constraints, claim mechanics, and
-forfeiture rules**. Economic parameters are intentionally **TBD**.
-
----
-
-## Abstract
-
-This EIP governs post-phase staking rewards for long-term participants
-after Phase One, Phase Two, and Phase Three have concluded.
-
-Post-phase rewards are:
-
-- Non-inflationary
-- Treasury-funded
-- ZK-verified
-- Distributed on a periodic checkpoint basis
-- Subject to strict forfeiture on dual-asset staking failure
+**Paired Asset**  
+A protocol ERC-721 NFT and its corresponding Ethscription artifact.
 
 ---
 
-## Participating Assets (Normative)
+## 2. Participating Assets (Normative)
 
-Eligible positions under this EIP are **Paired Assets only**, defined as:
+Eligible positions under this EIP are Genesis Paired Assets only, defined as:
 
-- One ERC-721 protocol NFT (Brain, Cerebral, Brainiac, or successor)
-- AND its corresponding Ethscription artifact
+- One ERC-721 NFT from the Genesis Set, including:
+  - Pickle Punks (Headshot, Full Body, and Phase 3 editions),
+  - Brains (Headshot editions),
+  - Cerebrals,
+  - Brainiacs,
+- AND its corresponding Ethscription artifact,
+- AND the Paired Asset must be part of the fixed 10,000 Genesis artifacts.
 
-The ERC-721 asset and its paired Ethscription MUST be concurrently staked.
+Both assets must be staked concurrently.
 
-Ethscriptions do not participate independently.
-ERC-721 assets do not qualify independently.
-
----
-
-## Staking Eligibility Start (Normative)
-
-A Paired Asset MAY begin post-phase staking only after ALL conditions are met:
-
-- The ERC-721 asset has completed its phase-based reward program(s)
-- The Paired Asset has completed AIT evolution
-- A protocol-recognized Node has been successfully converged
-- Both the ERC-721 asset and its paired Ethscription are staked concurrently
-
-Staking time does not accrue before these conditions are satisfied.
-
-Each Paired Asset begins its staking clock independently based on when
-its eligibility conditions are met.
+Ethscriptions do not qualify independently.  
+ERC-721 tokens do not qualify independently.
 
 ---
 
-## Reward Pool and Duration (Normative)
+## 3. Funding Source and Annual Cap (Normative)
 
-Post-phase staking rewards, if authorized, MUST satisfy all constraints below:
+Post-Phase Staking Rewards must be funded exclusively from the annual BITS emission ceiling governed by the Emission Controller (EIP-0014) and constrained by EIP-0003.
 
-- **Funding Source:** Treasury-funded only
-- **Supply:** Non-inflationary (no new issuance)
-- **Budget:** CAPPED (TO BE DETERMINED)
-- **Eligible Positions:** CAPPED (TO BE DETERMINED)
-- **Reward Duration:** TO BE DETERMINED
-- **Checkpoint Cadence:** Periodic (default intent: quarterly), governance-defined
+Annual emission ceiling: 12,500,000 BITS  
+Genesis Post-Phase Allocation (maximum): 2,500,000 BITS per year  
 
-No parameter in this section implies entitlement.
-
-Rewards MAY be reduced, delayed, restructured, or set to zero.
+This allocation is capped and must not exceed the annual emission ceiling.
 
 ---
 
-## Accrual and Allocation (Normative)
+## 4. Per-Genesis Annual Reward Cap and Tiers (Normative)
 
-Rewards MAY accrue continuously for accounting purposes.
+Total Genesis artifacts: 10,000  
 
-However, claimability MUST be determined only at checkpoint settlement.
+Maximum annual reward per Genesis artifact (highest tier):  
+250 BITS per year
 
-Allocation MAY incorporate governance-defined weighting, provided:
+Tier maximums:
 
-- it is deterministic at settlement,
-- it is ZK-verifiable,
-- it is bounded by the treasury cap, and
-- it does not violate any supply constraints in EIP-0003.
+- Tier 4 (Full Integrity): 250 BITS
+- Tier 3: 187.5 BITS
+- Tier 2: 125 BITS
+- Tier 1: 62.5 BITS
+- Non-compliant: 0
 
-This EIP does not require a fixed per-asset reward rate.
-
----
-
-## Checkpoint Vesting and Claims (Normative)
-
-Rewards vest at the end of each checkpoint period.
-
-At each checkpoint:
-
-- vested rewards become claimable,
-- unclaimed rewards MAY roll over (governance-defined),
-- the protocol MUST NOT automatically push rewards.
-
-Claims are:
-
-- user-initiated,
-- gas-paid by the user,
-- routed through ENS,
-- verified using zero-knowledge (ZK) proofs.
+No redistribution of unearned allocation is permitted.
 
 ---
 
-## Dual-Asset Staking, Proof of Care, and Continuity (Normative)
+## 5. Treasury Reversion (Normative)
 
-To receive rewards under this EIP, a Paired Asset MUST continuously satisfy ALL:
+Any portion of the 2,500,000 BITS annual allocation not earned due to non-compliance, forfeiture, or insufficient eligible positions must revert to the Node Treasury.
 
-1. **Concurrent Staking**  
-   Both the ERC-721 asset and its paired Ethscription MUST remain staked
-   without interruption.
-
-2. **Proof of Care**  
-   Proof-of-Care alignment MUST be maintained. Verified via ZK proofs.
-
-3. **Continuity**  
-   Continuity MUST remain unbroken across staking periods. Verified via ZK
-   proofs and protocol checks.
-
-4. **ENS-Bound Identity**  
-   The Paired Asset MUST be bound to a participant-selected ENS subdomain
-   under `bitbrains.eth` resolving to the staking wallet. Verified via ZK
-   proofs.
-
-Failure of any condition invalidates eligibility immediately.
+No carry-forward mechanism exists.
 
 ---
 
-## Forfeiture Rules (Normative)
+## 6. Epoch Structure, Settlement, and Claim Availability (Normative)
 
-If at any time a Paired Asset:
+### 6.1 Epoch Definitions
 
-- unstakes either the ERC-721 or Ethscription,
-- transfers or sells either asset (where applicable),
+Each program year is divided into four (4) epochs:
+
+- Epoch 1: 3 months
+- Epoch 2: 3 months
+- Epoch 3: 3 months
+- Epoch 4: 3 months
+
+The protocol MUST define a canonical program-year start timestamp.  
+Epoch boundaries are deterministically derived from that timestamp.
+
+### 6.2 Settlement and Claim Windows
+
+At the conclusion of each epoch:
+
+- the protocol performs an epoch settlement,
+- vested epoch rewards become claimable,
+- claims MUST be user-initiated,
+- users MUST pay gas for claim execution,
+- claims MUST be verified using ZK proofs,
+- claims MUST be routed via ENS-bound identity.
+
+Claims are made available through the official staking interface:
+
+- https://bitbrains.us
+
+### 6.3 Annual Cap Enforcement
+
+Quarterly settlements MUST NOT allow:
+
+- a Genesis artifact to exceed its annual tier maximum (250 / 187.5 / 125 / 62.5 BITS),
+- the total Genesis program to exceed 2,500,000 BITS in any program year.
+
+---
+
+## 7. Compliance Requirements (Normative)
+
+To qualify, a Genesis Paired Asset must:
+
+- Maintain concurrent staking of both assets
+- Maintain Proof of Care compliance
+- Maintain continuity without interruption
+- Maintain valid ENS-bound identity resolution
+- Pass ZK verification checks
+
+Failure of any requirement results in immediate forfeiture.
+
+---
+
+## 8. Forfeiture Rules (Normative)
+
+If at any time a Genesis Paired Asset:
+
+- unstakes either asset,
+- transfers either asset (where applicable),
 - breaks Proof of Care,
 - breaks continuity,
-- fails ENS resolution, or
+- fails ENS resolution,
 - fails ZK verification,
 
 then:
 
-- all unclaimed post-phase rewards are forfeited,
+- all unclaimed rewards are forfeited,
 - the staking clock stops immediately,
-- no partial checkpoint rewards are paid for the forfeiture window,
-- forfeited rewards return to the Rewards Reserve Treasury.
+- forfeited amounts revert to the Node Treasury.
 
 Forfeiture is immediate and irreversible.
 
 ---
 
-## Treasury and Supply Constraints (Normative)
+## 9. Governance Constraints (Normative)
 
-All post-phase rewards MUST be funded from a treasury budget.
+This EIP is constitutionally locked prior to DAO activation.
 
-This EIP does not authorize:
+After DAO activation, any modification to:
 
-- inflation,
-- new token issuance, or
-- automatic treasury expansion.
+- The 2,500,000 BITS annual cap
+- The 250 BITS per-Genesis cap
+- The tier structure
+- Genesis-only eligibility
 
-All distributions remain subject to the hard supply cap and emission
-constraints defined in EIP-0003.
-
-Remaining treasury balances remain under governance control.
+Requires Tier-3 (75%) approval under END DAO governance (EIP-0013-A).
 
 ---
 
 ## Summary
 
-Post-phase staking begins only after AIT evolution and Node convergence.
+- Genesis-only reward system
+- 2,500,000 BITS maximum annual allocation
+- 250 BITS maximum per Genesis artifact
+- Quarterly epoch settlements (3 months each)
+- Claims available at bitbrains.us
+- Tier-based capped dividend
+- No redistribution
+- Surplus returns to Treasury
+- Amendable only via Tier-3 governance
 
-Eligible positions:
-**Paired Assets only** (ERC-721 + Ethscription).
-
-Rewards are:
-- treasury-funded,
-- non-inflationary,
-- checkpoint-based (default intent: quarterly),
-- ZK-verified,
-- ENS-routed,
-- forfeitable on any dual-asset or Proof-of-Care failure.
-
-All numeric economics are intentionally **TBD** and must be introduced
-only via governance-ratified amendment or a future EIP.
+End of EIP-0012
